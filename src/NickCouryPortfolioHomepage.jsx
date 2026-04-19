@@ -127,7 +127,7 @@ export default function NickCouryPortfolioHomepage() {
         window.clearTimeout(activeSectionTimeout.current);
       }
     };
-  }, []);
+  }, );
 
   const strengths = [
     {
