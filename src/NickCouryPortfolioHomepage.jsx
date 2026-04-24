@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const MailIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -48,7 +49,6 @@ export default function NickCouryPortfolioHomepage() {
   };
 
   const navItems = [
-    ["About", "about"],
     ["Focus", "focus"],
     ["Experience", "experience"],
     ["Frameworks", "frameworks"],
@@ -57,10 +57,10 @@ export default function NickCouryPortfolioHomepage() {
     ["Contact", "contact"],
   ];
 
-  const [activeSection, setActiveSection] = useState(navItems[0][1]);
+  const [activeSection, setActiveSection] = useState(null);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const activeSectionTimeout = useRef(null);
-  const activeSectionRef = useRef(navItems[0][1]);
+  const activeSectionRef = useRef(null);
 
   const updateActiveSectionState = (sectionId) => {
     if (activeSectionRef.current === sectionId) {
@@ -87,9 +87,9 @@ export default function NickCouryPortfolioHomepage() {
       const headerEl = document.querySelector("header");
       const headerHeight = headerEl?.offsetHeight ?? 84;
       const triggerTop = headerHeight + 16;
-      let currentSection = sectionIds[0];
-      let lastPassedSection = sectionIds[0];
-      let nextSection = sectionIds[0];
+      let currentSection = null;
+      let lastPassedSection = null;
+      let nextSection = null;
       let nextDistance = Infinity;
 
       sectionIds.forEach((id) => {
@@ -113,6 +113,12 @@ export default function NickCouryPortfolioHomepage() {
       });
 
       currentSection = lastPassedSection || nextSection;
+
+      if (!currentSection) {
+        updateActiveSectionState(null);
+        return;
+      }
+
       flushActiveSection(currentSection);
     };
 
@@ -444,7 +450,7 @@ export default function NickCouryPortfolioHomepage() {
         </div>
       </header>
 
-        <main className="mx-auto max-w-7xl px-6 pb-24 pt-12 md:pt-20">
+        <main className="mx-auto max-w-7xl px-6 pb-24 pt-28 md:pt-32">
           <section id="about" className="scroll-mt-[7.5rem] grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="space-y-6">
               <div className="inline-flex rounded-full border border-[rgba(194,145,44,0.28)] bg-[rgba(194,145,44,0.10)] px-4 py-1 text-xs font-medium uppercase tracking-[0.22em] text-[var(--seal-gold)]">
@@ -732,6 +738,12 @@ export default function NickCouryPortfolioHomepage() {
                 >
                   <span className="inline-flex items-center gap-2"><AwardIcon size={16} /> View Certifications</span>
                 </a>
+              </div>
+
+              <div className="mt-12 text-center">
+                <Link to="/about" className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+                  Learn More About Me
+                </Link>
               </div>
             </div>
           </section>
