@@ -391,9 +391,12 @@ export default function NickCouryPortfolioHomepage() {
         <header className="sticky top-0 z-50 border-b border-[var(--soft-ivory)] bg-[rgba(23,23,33,0.94)] backdrop-blur-xl relative">
           <div className="mx-auto flex flex-col gap-3 max-w-7xl px-6 py-3 md:flex-row md:items-center md:justify-between">
             <div className="flex flex-col min-w-0 flex-1">
-              <div className="font-display text-xl md:text-2xl font-semibold tracking-wide text-[var(--seal-gold)]">
+              <Link
+                to="/about"
+                className="font-display text-xl md:text-2xl font-semibold tracking-wide text-[var(--seal-gold)] transition hover:text-[var(--ethereal-ivory)]"
+              >
                 Nick Coury
-              </div>
+              </Link>
 
               <div className="text-[clamp(0.6rem,0.8vw,0.75rem)] text-[var(--muted-ivory)] whitespace-nowrap overflow-hidden text-ellipsis">
                 Strategic IT Operations · Security · AI Governance · Operational Resilience
@@ -751,7 +754,6 @@ export default function NickCouryPortfolioHomepage() {
           <footer className="mt-16 pb-10 text-center">
             <div className="footer-watermark text-xs tracking-wider">
               © {new Date().getFullYear()} Nick Coury — All Rights Reserved
-              <h6>nickcoury.co</h6>
             </div>
           </footer>
         </main>
