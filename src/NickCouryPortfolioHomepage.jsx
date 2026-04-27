@@ -209,7 +209,7 @@ export default function NickCouryPortfolioHomepage() {
       company: "Around the Mountain Builders",
       period: "2004 - 2019",
       summary:
-        "Founded and led a multi-site operation delivering turn-key projects, energy efficiency, integrated infrastructure, and standardized practices that optimized performance and reliability.",
+        "Founded and led a multi-site operation delivering turn-key projects, energy efficiency, integrated infrastructure, and standardized practices that optimized performance and reliability. Oversaw compliance and permitting activities, working directly with local, state, and federal government entities to secure permits, ensure regulatory alignment, coordinate inspections, and embed governance-minded processes into project delivery—reducing delays, mitigating regulatory risk, and improving stakeholder communication.",
     },
   ];
 
