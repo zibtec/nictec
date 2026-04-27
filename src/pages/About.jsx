@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import profileImage from "../assets/profile.jpg";
 
 const sections = [
@@ -130,16 +129,17 @@ const sections = [
 ];
 
 const About = () => {
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
   return (
     <section className="min-h-screen bg-[#0f111a] px-6 pt-28 pb-20 text-white">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8">
-          <Link
-            to="/"
-            className="font-display inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-[var(--seal-gold)] transition hover:text-white"
-          >
+          <span className="font-display inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-[var(--seal-gold)]">
             Nick Coury
-          </Link>
+          </span>
         </div>
 
         <motion.div

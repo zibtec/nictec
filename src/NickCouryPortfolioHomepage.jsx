@@ -391,12 +391,9 @@ export default function NickCouryPortfolioHomepage() {
         <header className="sticky top-0 z-50 border-b border-[var(--soft-ivory)] bg-[rgba(23,23,33,0.94)] backdrop-blur-xl relative">
           <div className="mx-auto flex flex-col gap-3 max-w-7xl px-6 py-3 md:flex-row md:items-center md:justify-between">
             <div className="flex flex-col min-w-0 flex-1">
-              <Link
-                to="/about"
-                className="font-display text-xl md:text-2xl font-semibold tracking-wide text-[var(--seal-gold)] transition hover:text-[var(--ethereal-ivory)]"
-              >
+              <div className="font-display text-xl md:text-2xl font-semibold tracking-wide text-[var(--seal-gold)]">
                 Nick Coury
-              </Link>
+              </div>
 
               <div className="text-[clamp(0.6rem,0.8vw,0.75rem)] text-[var(--muted-ivory)] whitespace-nowrap overflow-hidden text-ellipsis">
                 Strategic IT Operations · Security · AI Governance · Operational Resilience
@@ -470,19 +467,62 @@ export default function NickCouryPortfolioHomepage() {
                 <div className="h-[3px] w-32 rounded-full bg-gradient-to-r from-[var(--seal-gold)] to-transparent" />
                 <p className="max-w-3xl text-lg leading-8 tracking-widest text-[rgba(247,235,224,0.92)]">
                   <span className="opacity-90">Strategic IT Operations</span>
-                  <span className="mx-2 text-[var(--seal-gold)]">•</span>
+                  <span className="mx-2 text-[var(--seal-gold)]">&middot;</span>
                   <span className="font-semibold text-[var(--seal-gold)] drop-shadow-[0_0_8px_rgba(194,145,44,0.45)]">Security</span>
-                  <span className="mx-2 text-[var(--seal-gold)]">•</span>
+                  <span className="mx-2 text-[var(--seal-gold)]">&middot;</span>
                   <span className="opacity-90">AI Governance</span>
-                  <span className="mx-2 text-[var(--seal-gold)]">•</span>
+                  <span className="mx-2 text-[var(--seal-gold)]">&middot;</span>
                   <span className="opacity-90">Operational Resilience</span>
                 </p>
                 <p className="max-w-3xl text-base leading-7 text-[var(--muted-ivory)]">
-                  I’m Nick Coury. I spent two decades building and leading businesses in the physical world, from founding a construction firm to managing a generational real estate brokerage. My transition into IT was a return to a lifelong passion, sharpened by exposure to high-scale operations at Amazon and driven by a personal mission to build secure digital environments in an increasingly complex world.
+                  I'm Nick Coury. I spent two decades building and leading businesses in the physical world, from founding a construction firm to managing a generational real estate brokerage. My transition into IT was a return to a lifelong passion, sharpened by exposure to high-scale operations at Amazon and driven by a personal mission to build secure digital environments in an increasingly complex world.
                 </p>
                 <p className="max-w-3xl text-base leading-7 text-[var(--muted-ivory)]">
-                  With a Master’s in Information Technology and a foundation built on relentless execution, ownership, and real-world leadership, I bridge the gap between business strategy and the secure, scalable infrastructure required to keep modern organizations moving.
+                  With a Master's in Information Technology and a foundation built on relentless execution, ownership, and real-world leadership, I bridge the gap between business strategy and the secure, scalable infrastructure required to keep modern organizations moving.
                 </p>
+              </div>
+
+              <div className="glass rounded-[24px] p-4 md:p-5">
+                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">
+                  Explore the Site
+                </div>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <button
+                    type="button"
+                    onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
+                    className="rounded-full border border-[var(--seal-gold)] bg-[var(--seal-gold)] px-4 py-2 text-sm font-semibold text-[var(--velvet-obsidian)]"
+                  >
+                    Home
+                  </button>
+                  <Link
+                    to="/blog"
+                    className="rounded-full border border-[rgba(247,235,224,0.14)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]"
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    to="/about"
+                    className="rounded-full border border-[rgba(247,235,224,0.14)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]"
+                  >
+                    About
+                  </Link>
+                </div>
+
+                <div className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">
+                  Jump to a Section
+                </div>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  {navItems.map(([label, id]) => (
+                    <button
+                      key={`hero-${id}`}
+                      type="button"
+                      onClick={() => scrollToSection(id)}
+                      className="rounded-full border border-[rgba(247,235,224,0.12)] bg-[rgba(247,235,224,0.04)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]"
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
@@ -490,7 +530,7 @@ export default function NickCouryPortfolioHomepage() {
                   href="mailto:nick@nickcoury.co"
                   className="rounded-2xl bg-[var(--deep-crimson)] px-5 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] transition hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)]"
                 >
-                  <span className="inline-flex items-center gap-2"><MailIcon size={16} /> Let’s Connect</span>
+                  <span className="inline-flex items-center gap-2"><MailIcon size={16} /> Let's Connect</span>
                 </a>
               </div>
             </div>
@@ -744,7 +784,13 @@ export default function NickCouryPortfolioHomepage() {
               </div>
 
               <div className="mt-12 text-center">
-                <Link to="/about" className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+                <Link
+                  to="/about"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, left: 0, behavior: "auto" })
+                  }
+                  className="inline-block rounded-2xl border border-[var(--seal-gold)] bg-[rgba(194,145,44,0.12)] px-6 py-3 text-sm font-semibold text-[var(--seal-gold)] shadow-[0_14px_30px_rgba(194,145,44,0.14)] transition hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)]"
+                >
                   Learn More About Me
                 </Link>
               </div>

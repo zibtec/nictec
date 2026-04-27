@@ -2,14 +2,12 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const location = useLocation();
-  const isAboutPage = location.pathname === "/about";
-  const brandTarget = isAboutPage ? "/" : "/about";
 
   const linkStyle = (path) =>
-    `px-4 py-2 text-sm tracking-wide transition ${
+    `rounded-full px-4 py-2 text-sm font-semibold tracking-[0.14em] transition ${
       location.pathname === path
-        ? "text-white border-b-2 border-white"
-        : "text-gray-400 hover:text-white"
+        ? "border border-[var(--seal-gold)] bg-[var(--seal-gold)] text-[var(--velvet-obsidian)]"
+        : "border border-[rgba(247,235,224,0.12)] text-[var(--muted-ivory)] hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]"
     }`;
 
   const handleAboutClick = (event) => {
@@ -20,25 +18,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-md z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="nav-shell fixed top-0 left-0 z-50 w-full">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         
         {/* Logo / Name */}
-        <Link
-          to={brandTarget}
-          className={`font-display text-sm font-semibold tracking-widest transition ${
-            isAboutPage
-              ? "text-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]"
-              : "text-white hover:text-[var(--seal-gold)]"
-          }`}
-        >
+        <span className="font-display text-sm font-semibold tracking-widest text-[var(--seal-gold)]">
           NICK COURY
-        </Link>
+        </span>
 
         {/* Navigation Links */}
         <div className="flex space-x-6">
           <Link to="/" className={linkStyle("/")}>
             Home
+          </Link>
+          <Link to="/blog" className={linkStyle("/blog")}>
+            Blog
           </Link>
           <Link
             to="/about"
