@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const MailIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -38,13 +37,6 @@ const SectionHeading = ({ eyebrow, title, description }) => (
 );
 
 export default function NickCouryPortfolioHomepage() {
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   const strengths = [
     {
       title: "Project Management & Delivery",
@@ -265,43 +257,8 @@ export default function NickCouryPortfolioHomepage() {
           <div className="floating-rail" />
         </div>
 
-        <header className="sticky top-0 z-50 border-b border-[var(--soft-ivory)] bg-[rgba(23,23,33,0.84)] backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center px-6 py-4">
-            <div className="flex-shrink-0">
-              <div className="font-display text-2xl font-semibold tracking-wide text-[var(--seal-gold)]">Nick Coury</div>
-              <div className="text-xs text-[var(--muted-ivory)]">
-                Strategic IT Operations <span className="text-[var(--seal-gold)]">•</span> Security <span className="text-[var(--seal-gold)]">•</span> AI Governance <span className="text-[var(--seal-gold)]">•</span> Operational Resilience
-              </div>
-            </div>
-            <nav className="hidden gap-3 md:flex ml-auto">
-              <Link to="/experience" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
-                Experience
-              </Link>
 
-              <Link to="/education" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
-                Education
-              </Link>
-
-              <Link to="/initiatives" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
-                Project Initiatives
-              </Link>
-
-              <a href="https://www.credly.com/users/nick-coury" target="_blank" rel="noreferrer" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
-                Credentials
-              </a>
-
-              <Link to="/about" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
-                About
-              </Link>
-
-              <button onClick={() => scrollToSection('contact')} className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
-                Contact
-              </button>
-            </nav>
-          </div>
-        </header>
-
-        <main className="mx-auto max-w-7xl px-6 pb-24 pt-12 md:pt-20">
+        <main className="mx-auto max-w-7xl px-6 pb-24 pt-44 lg:pt-32">
           <section id="about" className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="space-y-6">
               <div className="inline-flex rounded-full border border-[rgba(194,145,44,0.28)] bg-[rgba(194,145,44,0.10)] px-4 py-1 text-xs font-medium uppercase tracking-[0.22em] text-[var(--seal-gold)]">
@@ -317,21 +274,21 @@ export default function NickCouryPortfolioHomepage() {
                 </h1>
                 <div className="h-[3px] w-32 rounded-full bg-gradient-to-r from-[var(--seal-gold)] to-transparent" />
                 <p className="max-w-3xl text-lg leading-8 tracking-widest text-[rgba(247,235,224,0.92)]">
-                  <span className="opacity-90">Strategic IT Operations</span>
-                  <span className="mx-2 text-[var(--seal-gold)]">•</span>
-                  <span className="font-semibold text-[var(--seal-gold)] drop-shadow-[0_0_8px_rgba(194,145,44,0.45)]">Security</span>
-                  <span className="mx-2 text-[var(--seal-gold)]">•</span>
-                  <span className="opacity-90">AI Governance</span>
-                  <span className="mx-2 text-[var(--seal-gold)]">•</span>
-                  <span className="opacity-90">Operational Resilience</span>
+                  <span className="opacity-90">Building Infrastructure</span>
+                  <span className="mx-2 text-[var(--seal-gold)]">&mdash;</span>
+                  <span className="opacity-90">From Physical Systems to Networks to</span>
+                  <span className="ml-2 font-semibold text-[var(--seal-gold)] drop-shadow-[0_0_8px_rgba(194,145,44,0.45)]">
+                    Cybersecurity
+                  </span>
                 </p>
                 <p className="max-w-3xl text-base leading-7 text-[var(--muted-ivory)]">
-                  I’m Nick Coury. I spent two decades building and leading businesses in the physical world, from founding a construction firm to managing a generational real estate brokerage. My transition into IT was a return to a lifelong passion, sharpened by exposure to high-scale operations at Amazon and driven by a personal mission to build secure digital environments in an increasingly complex world.
+                  I bring 20+ years of experience leading complex, real-world operations into Information Technology. After building and scaling a construction company alongside a real estate brokerage, I transitioned into IT through hands-on experience in a high-volume, AWS-integrated environment at Amazon&mdash;which led me to complete both a Bachelor&rsquo;s and Master&rsquo;s degree in Information Technology.
                 </p>
                 <p className="max-w-3xl text-base leading-7 text-[var(--muted-ivory)]">
-                  With a Master’s in Information Technology and a foundation built on relentless execution, ownership, and real-world leadership, I bridge the gap between business strategy and the secure, scalable infrastructure required to keep modern organizations moving.
+                  Now, I apply that foundation to designing, securing, and optimizing systems focused on reliability, performance, and scalability.
                 </p>
               </div>
+
 
               {/* Removed redundant mailto button and inline hero nav per request */}
             </div>

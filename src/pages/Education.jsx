@@ -7,7 +7,7 @@ export default function EducationPage() {
   }, []);
 
   return (
-    <div className="page-root mx-auto max-w-4xl px-6 py-12">
+    <div className="page-root mx-auto max-w-4xl px-6 pb-12 pt-44 lg:pt-32">
       <h1 className="font-display text-3xl font-bold text-[var(--ethereal-ivory)]">Education & Certifications</h1>
       <div className="mt-8 grid gap-3 sm:grid-cols-2">
         {certificatesData.map((cert) => (

@@ -42,11 +42,21 @@ function CloudflareAnalytics() {
 }
 
 function ScrollToTop() {
-  const { pathname, key } = useLocation();
+  const { hash, pathname, key } = useLocation();
 
   React.useEffect(() => {
+    if (hash) {
+      window.setTimeout(() => {
+        const target = document.getElementById(hash.slice(1));
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 0);
+      return;
+    }
+
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-  }, [pathname, key]);
+  }, [hash, pathname, key]);
 
   return null;
 }
