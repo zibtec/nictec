@@ -112,6 +112,11 @@ export default function Blog() {
   return (
     <section className="min-h-screen px-6 pb-20 pt-44 text-white hero-bg lg:pt-32">
       <div className="mx-auto max-w-7xl">
+        <div className="mb-6">
+          <Link to="/" className="rounded-full border border-[rgba(255,255,255,0.06)] px-3 py-1 text-sm font-semibold text-gray-300 hover:border-[var(--seal-gold)]">
+            Home
+          </Link>
+        </div>
         <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[var(--seal-gold)]">

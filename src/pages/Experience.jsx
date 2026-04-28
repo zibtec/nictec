@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import experienceData from "../data/experience-data";
 
 export default function ExperiencePage() {
@@ -8,6 +9,9 @@ export default function ExperiencePage() {
 
   return (
     <div className="page-root mx-auto max-w-4xl px-6 pb-12 pt-44 lg:pt-32">
+      <div className="mb-6">
+        <Link to="/" className="rounded-full border border-[rgba(255,255,255,0.06)] px-3 py-1 text-sm font-semibold text-gray-300 hover:border-[var(--seal-gold)]">Home</Link>
+      </div>
       <div className="space-y-5">
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--seal-gold)]">
           Experience
