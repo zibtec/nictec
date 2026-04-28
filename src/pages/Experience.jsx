@@ -12,6 +12,7 @@ export default function ExperiencePage() {
       <div className="space-y-5">
         <div className="flex items-center gap-4">
           <Link to="/" className="rounded-full border px-4 py-2 text-sm text-[var(--muted-ivory)] border-[var(--soft-ivory)] transition hover:border-[var(--seal-gold)]">Home</Link>
+        </div>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--seal-gold)]">
           Experience
         </p>
