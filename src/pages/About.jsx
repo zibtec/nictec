@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Link } from "react-router-dom";
 import * as FramerMotion from "framer-motion";
 import profileImage from "../assets/profile.jpg";
 
@@ -137,10 +136,7 @@ const About = () => {
   return (
     <section className="min-h-screen bg-[#0f111a] px-6 pt-28 pb-20 text-white">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-8 flex items-center gap-4">
-          <Link to="/" className="rounded-full border px-4 py-2 text-sm text-[var(--muted-ivory)] border-[var(--soft-ivory)] transition hover:border-[var(--seal-gold)]">
-            Home
-          </Link>
+        <div className="mb-8">
           <span className="font-display inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-[var(--seal-gold)]">
             Nick Coury
           </span>

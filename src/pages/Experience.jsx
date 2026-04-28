@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import experienceData from "../data/experience-data";
 
 export default function ExperiencePage() {
@@ -8,12 +7,10 @@ export default function ExperiencePage() {
   }, []);
 
   return (
-    <div className="page-root mx-auto max-w-4xl px-6 pb-12 pt-44 lg:pt-32">
+    <div className="portfolio-page-shell">
+      <main className="page-root mx-auto max-w-4xl px-6 pb-12 pt-44 lg:pt-32">
       <div className="space-y-5">
-        <div className="flex items-center gap-4">
-          <Link to="/" className="rounded-full border px-4 py-2 text-sm text-[var(--muted-ivory)] border-[var(--soft-ivory)] transition hover:border-[var(--seal-gold)]">Home</Link>
-        </div>
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--seal-gold)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--seal-gold)]">
           Experience
         </p>
         <h1 className="font-display max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
@@ -53,6 +50,7 @@ export default function ExperiencePage() {
           </div>
         ))}
       </div>
+      </main>
     </div>
   );
 }

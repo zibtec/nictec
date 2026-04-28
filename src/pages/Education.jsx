@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import certificatesData from "../data/certificates-data";
 
 export default function EducationPage() {
@@ -8,11 +7,9 @@ export default function EducationPage() {
   }, []);
 
   return (
-    <div className="page-root mx-auto max-w-4xl px-6 pb-12 pt-44 lg:pt-32">
+    <div className="portfolio-page-shell">
+      <main className="page-root mx-auto max-w-4xl px-6 pb-12 pt-44 lg:pt-32">
       <div className="space-y-5">
-        <div className="flex items-center gap-4">
-          <Link to="/" className="rounded-full border px-4 py-2 text-sm text-[var(--muted-ivory)] border-[var(--soft-ivory)] transition hover:border-[var(--seal-gold)]">Home</Link>
-        </div>
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--seal-gold)]">
           Education & Certifications
         </p>
@@ -46,6 +43,7 @@ export default function EducationPage() {
           </div>
         ))}
       </div>
+      </main>
     </div>
   );
 }

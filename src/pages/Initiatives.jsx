@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const navItems = [
   { id: "summary", label: "Summary", icon: "home" },
@@ -130,17 +129,11 @@ export default function InitiativesPage() {
   }, []);
 
   return (
-    <div className="project-page hero-bg min-h-screen text-[var(--ethereal-ivory)]">
+    <div className="project-page portfolio-page-shell">
       <main className="mx-auto max-w-7xl px-6 pb-24 pt-44 lg:pt-32">
-        <div className="mb-6">
-          <Link to="/" className="rounded-full border border-[rgba(255,255,255,0.06)] px-3 py-1 text-sm font-semibold text-gray-300 hover:border-[var(--seal-gold)]">Home</Link>
-        </div>
         <section id="summary" data-section className="project-section visible">
           <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
-                <div className="mb-2 flex items-center gap-4">
-                  <Link to="/" className="rounded-full border px-4 py-2 text-sm text-[var(--muted-ivory)] border-[var(--soft-ivory)] transition hover:border-[var(--seal-gold)]">Home</Link>
-                </div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--seal-gold)]">
                   Projects & Initiatives / Case Study
                 </p>
