@@ -137,224 +137,65 @@ export default function NickCouryPortfolioHomepage() {
 
   const strengths = [
     {
-      title: "Project Management & Delivery",
-      description:
-        "Driving structured execution across IT, security, cloud, and support initiatives using PMBOK®, Agile, and ITIL to produce measurable outcomes, accountability, and operational efficiency.",
-    },
-    {
-      title: "IT Operations, Infrastructure & Security",
-      description:
-        "Integrating endpoint support, infrastructure troubleshooting, identity controls, and security practices including IAM, MFA, incident response, and monitoring aligned to NIST CSF and CIS Controls.",
-    },
-    {
-      title: "Cloud, AI & Governance",
-      description:
-        "Supporting cloud and emerging AI systems with a security-first mindset, using governance, risk management, and compliance frameworks including NIST AI RMF to encourage responsible adoption of modern technologies.",
-    },
-  ];
+      <div className="converted-root">
+        <aside className="sidebar">
+          <div>
+            <h1>Nick Coury</h1>
+            <p>IT • Infrastructure • Security</p>
 
-  const featuredAreas = [
-    "Project management for IT and security initiatives",
-    "Cloud operations (AWS) with security alignment",
-    "Endpoint security and access control (IAM, MFA)",
-    "AI security and governance (NIST AI RMF)",
-    "Cybersecurity frameworks (NIST CSF, CIS)",
-    "Incident response and vulnerability identification",
-    "Operational compliance, SOPs, and audit readiness",
-    "Cross-functional coordination and delivery execution",
-  ];
+            <nav className="nav-links">
+              <Link to="/">Summary</Link>
+              <Link to="/experience">Experience</Link>
+              <Link to="/initiatives">Systems & Data</Link>
+              <Link to="/about">About</Link>
+            </nav>
+          </div>
 
-  const journey = [
-    {
-      title: "Operations + Technology",
-      text:
-        "Built experience supporting high-volume, technology-driven environments where uptime, process consistency, secure access, and user support directly impacted performance.",
-    },
-    {
-      title: "Leadership + Delivery",
-      text:
-        "Led multi-site construction and IT-integrated initiatives, coordinating delivery, improving workflows, and strengthening operational accountability over time.",
-    },
-    {
-      title: "Continuous Growth",
-      text:
-        "Expanded into modern IT, cloud, security, AI governance, and project management disciplines through formal education, certifications, and ongoing professional development.",
-    },
-  ];
+          <div className="sidebar-footer">
+            <p>Tucson, AZ</p>
+            <p>
+              <a href="mailto:nick@nickcoury.co">Email</a>
+            </p>
+            <p>
+              <a href="https://www.linkedin.com/in/nickacoury" target="_blank" rel="noreferrer">LinkedIn</a>
+            </p>
+          </div>
+        </aside>
 
-  const experience = [
-    {
-      role: "Process Assistant",
-      company: "Amazon.com",
-      period: "2021 - 2023",
-      summary:
-        "Managed IT and warehouse support within a high-volume AWS environment; resolved network, endpoint, and MFA hurdles to maintain seamless daily output and personnel performance.",
-    },
-    {
-      role: "Learning Ambassador / Fulfillment Associate",
-      company: "Amazon.com",
-      period: "2019 - 2021",
-      summary:
-        "Trained and mentored team members on systems, workflows, and security-aligned procedures while reinforcing operational consistency and compliance-focused habits.",
-    },
-    {
-      role: "Real Estate Broker / Network Administrator",
-      company: "Great American Investment Corp.",
-      period: "1999 - 2025",
-      summary:
-        "Balanced regulated brokerage operations with network administration, deploying seamless digital integrations that empowered agents to scale their individual businesses and execute smoother transactions while ensuring total alignment with regulatory mandates and data security.",
-    },
-    {
-      role: "Founder / IT Manager / Qualifying Party",
-      company: "Around the Mountain Builders",
-      period: "2004 - 2019",
-      summary:
-        "Founded and led a multi-site operation delivering turn-key projects, energy efficiency, integrated infrastructure, and standardized practices that optimized performance and reliability. Oversaw compliance and permitting activities, working directly with local, state, and federal government entities to secure permits, ensure regulatory alignment, coordinate inspections, and embed governance-minded processes into project delivery—reducing delays, mitigating regulatory risk, and improving stakeholder communication.",
-    },
-  ];
+        <main className="main">
+          <section className="section hero" id="summary">
+            <h1>
+              20+ Years of Leadership.
+              <br />
+              Re-engineered for the Digital Age.
+            </h1>
 
-  const certificates = [
-    "CompTIA Network Infrastructure Professional (CNIP®)",
-    "Lean Six Sigma Black Belt",
-    "CompTIA Project+",
-    "Certified Associate in Project Management (CAPM®)",
-    "AWS Certified Cloud Practitioner (CCP®)",
-    "Linux Essentials",
-    "CompTIA Secure Infrastructure Specialist (CSIS®)",
-    "ITIL4® Foundations",
-  ];
+            <p className="subheadline">
+              IT Operations • Security • Network & Infrastructure • AI Governance • Operational Resilience
+            </p>
 
-  const tools = [
-    {
-      title: "Infrastructure & Systems",
-      accent: "var(--deep-crimson)",
-      items: [
-        "Windows / Linux environments",
-        "Active Directory & identity management",
-        "Network troubleshooting (TCP/IP, DNS, DHCP)",
-        "Hardware deployment & endpoint support",
-      ],
-    },
-    {
-      title: "Security & Monitoring",
-      accent: "var(--ethereal-ivory)",
-      items: [
-        "SIEM & log analysis concepts",
-        "Endpoint protection & EDR/XDR awareness",
-        "MFA, IAM, and access control",
-        "Network scanning tools (Wireshark, Nmap)",
-      ],
-    },
-    {
-      title: "Cloud, Dev & Process Tools",
-      accent: "var(--seal-gold)",
-      items: [
-        "AWS cloud fundamentals & services",
-        "Basic scripting (Python, Bash)",
-        "ITSM & ticketing systems",
-        "Documentation, SOPs, and process tools",
-      ],
-    },
-  ];
+            <p>
+              Information Management and IT professional with 20+ years of experience across construction,
+              real estate, and operations. Proven ability to manage systems, maintain data integrity,
+              and support high-demand environments.
+            </p>
 
-  const frameworks = [
-    {
-      title: "NIST Cybersecurity Framework (CSF)",
-      accent: "var(--deep-crimson)",
-      text:
-        "Applied to identify, protect, detect, respond, and recover across systems and operations. Supports structured security practices and incident response readiness.",
-    },
-    {
-      title: "NIST AI Risk Management Framework (AI RMF)",
-      accent: "var(--ethereal-ivory)",
-      text:
-        "Guides governance, risk assessment, and secure deployment of AI systems, emphasizing trustworthy AI through lifecycle management and risk-aware decision-making.",
-    },
-    {
-      title: "CIS Critical Security Controls",
-      accent: "var(--seal-gold)",
-      text:
-        "Provides prioritized, actionable controls to strengthen endpoint, network, and system security against real-world threats.",
-    },
-  ];
+            <p>
+              Recently completed a Master’s in Information Technology, with hands-on experience designing
+              secure, segmented environments and implementing real-world infrastructure and data solutions.
+            </p>
+          </section>
+          <div className="hero-links">
+            <Link to="/" className="btn">Focus</Link>
+            <Link to="/experience" className="btn secondary">Experience</Link>
+            <Link to="/frameworks" className="btn secondary">Frameworks</Link>
+            <Link to="/about" className="btn secondary">Education</Link>
+            <Link to="/case-studies" className="btn secondary">Case Studies</Link>
+            <Link to="/contact" className="btn secondary">Contact</Link>
+          </div>
 
-  const caseStudies = [
-    {
-      title: "High-Volume IT Operations Stabilization",
-      accent: "var(--deep-crimson)",
-      focus: "Endpoint Security • MFA • Incident Response • Operational Continuity",
-      summary:
-        "In a high-volume AWS-integrated environment, I supported frontline IT operations by troubleshooting network connectivity, MFA failures, and endpoint access issues affecting daily workflows.",
-      bullets: [
-        "Reduced recurring access issues through root-cause identification and repeatable fixes",
-        "Reinforced endpoint security and access control practices aligned with least-privilege principles",
-        "Resolved and documented trouble tickets to support faster resolution cycles, eliminating escalations and improving associate experience",
-      ],
-      result:
-        "Improved uptime, reduced user friction, strengthened secure operational practices, and reduced critical pull time misses below 5%.",
-    },
-    {
-      title: "Network & Data Security in a Regulated Business Environment",
-      accent: "var(--ethereal-ivory)",
-      focus: "Access Control • Data Protection • Compliance • Governance",
-      summary:
-        "Managed and secured systems in a real estate brokerage handling sensitive financial and client data while maintaining regulatory compliance and system integrity.",
-      bullets: [
-        "Implemented access control and monitoring practices to reduce unauthorized access risk",
-        "Maintained compliance through structured processes, documentation, and accountability",
-        "Monitored system and agent activity to proactively identify and mitigate potential threats",
-      ],
-      result: "Strengthened data protection posture and improved audit readiness in a regulated environment.",
-    },
-    {
-      title: "Infrastructure & IT Integration Across Multi-Site Projects",
-      accent: "var(--seal-gold)",
-      focus: "Network Deployment • Structured Cabling • Process Improvement",
-      summary:
-        "Delivered 50+ projects integrating IT infrastructure into construction environments while balancing project delivery timelines with reliability, documentation, and quality control.",
-      bullets: [
-        "Standardized deployment processes to improve consistency and efficiency",
-        "Integrated secure configurations into infrastructure design and implementation",
-        "Treated each project with an ownership mindset while still executing within scope and structure",
-      ],
-      result: "Increased efficiency, improved reliability, and scalable infrastructure delivery.",
-    },
-    {
-      title: "AI & Security Awareness Integration",
-      accent: "var(--deep-crimson)",
-      focus: "AI Risk • Governance • NIST AI RMF • Cybersecurity Alignment",
-      summary:
-        "Actively advancing my expertise in AI security and governance through continual learning, including pursuing certification aligned to the NIST AI Risk Management Framework through Akylade.",
-      bullets: [
-        "Studying AI risk lifecycle functions: Govern, Map, Measure, and Manage",
-        "Aligning AI practices with cybersecurity frameworks such as NIST CSF",
-        "Expanding knowledge in AI governance, risk, and compliance for future-focused security roles",
-        "Pursuing deeper certifications and technical learning to stay ahead of evolving threats",
-      ],
-      result: "Positioned to support secure AI adoption, governance, and compliance-driven environments.",
-    },
-  ];
-
-  const phases = [
-    {
-      title: "First 30 Days",
-      accent: "var(--deep-crimson)",
-      bullets: [
-        "Learn systems, SOPs, tools, workflows, and service expectations quickly",
-        "Triage tickets, identify recurring issues, and resolve quick wins",
-        "Validate access control, MFA, endpoint support practices, and documentation",
-        "Build trust by listening, following process, and delivering reliably",
-      ],
-    },
-    {
-      title: "First 60 Days",
-      accent: "var(--ethereal-ivory)",
-      bullets: [
-        "Identify root causes of recurring technical and security issues",
-        "Improve processes for efficiency, reliability, and compliance",
-        "Strengthen documentation, incident handling, and escalation workflows",
-        "Support cloud, endpoint, and infrastructure environments with security alignment",
-      ],
+        </main>
+      </div>
     },
     {
       title: "First 90 Days",
@@ -589,24 +430,6 @@ export default function NickCouryPortfolioHomepage() {
             </div>
           </section>
 
-          <section id="experience" className="mt-20 scroll-mt-[7.5rem]">
-            <SectionHeading eyebrow="Selected Experience" title="Roles that reflect range, adaptability, and execution" />
-            <div className="space-y-5">
-              {experience.map((item) => (
-                <div key={`${item.role}-${item.period}`} className="glass rounded-[26px] p-6 md:p-7">
-                  <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                    <div>
-                      <h3 className="font-display text-xl font-semibold text-[var(--ethereal-ivory)]">{item.role}</h3>
-                      <div className="mt-1 text-[var(--muted-ivory)]">{item.company}</div>
-                    </div>
-                    <div className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--ethereal-ivory)]">{item.period}</div>
-                  </div>
-                  <p className="mt-4 max-w-4xl text-sm leading-7 text-[rgba(247,235,224,0.88)] md:text-base">{item.summary}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
           <section id="credentials" className="mt-20 scroll-mt-[7.5rem] grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="glass rounded-[28px] p-7">
               <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">Credentials</div>
@@ -649,89 +472,9 @@ export default function NickCouryPortfolioHomepage() {
             </div>
           </section>
 
-          <section id="frameworks" className="mt-20 scroll-mt-[7.5rem]">
-            <SectionHeading
-              eyebrow="Security & Compliance Frameworks"
-              title="Built on recognized standards. Applied with real-world execution."
-              description="Just like building a home starts with a solid foundation, I operate within proven frameworks that align with company values, strategic vision, and core IT fundamentals such as networking, security, and project management. This approach creates stability, scalability, and long-term resilience. With over 20 years across construction, business operations, and technology, I have worked within structured systems long before IT and now apply that same discipline through NIST CSF, NIST AI RMF, and CIS Controls to support execution, governance, and risk management. Because whether building homes or securing systems, everything fails without a strong foundation."
-            />
-            <div className="grid gap-6 md:grid-cols-3">
-              {frameworks.map((framework) => (
-                <div key={framework.title} className="glass rounded-[26px] border-t-4 p-6" style={{ borderTopColor: framework.accent }}>
-                  <h3 className="font-display text-xl font-semibold text-[var(--ethereal-ivory)]">{framework.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-[rgba(247,235,224,0.88)]">{framework.text}</p>
-                </div>
-              ))}
-            </div>
+          
 
-            <div className="mt-12 glass rounded-[30px] p-8 md:p-10">
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">Tools + Framework Integration</div>
-              <h3 className="font-display mt-3 text-2xl font-bold text-[var(--ethereal-ivory)]">How tools, security, and governance connect in real-world operations</h3>
-              <p className="mt-4 text-sm leading-7 text-[rgba(247,235,224,0.88)]">
-                Modern IT operations are not siloed. Tools, physical installations, security controls, and frameworks work together to support risk management, operational stability, and compliance. This is how I operate: from hands-on device installation, cabling, and endpoint setup to system configuration, security enforcement, and governance alignment.
-              </p>
-
-              <div className="mt-10 grid gap-6 text-center md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
-                <div className="rounded-[22px] border border-[var(--soft-ivory)] p-5">
-                  <div className="font-display text-lg font-semibold text-[var(--seal-gold)]">Tools</div>
-                  <ul className="mt-3 space-y-1 text-sm text-[var(--muted-ivory)]">
-                    <li>Endpoints / OS</li>
-                    <li>Device installation & cabling</li>
-                    <li>Cloud (AWS)</li>
-                    <li>SIEM / Logs</li>
-                    <li>Network tools & troubleshooting</li>
-                  </ul>
-                </div>
-
-                <div className="text-2xl text-[var(--seal-gold)] hidden md:block">→</div>
-
-                <div className="rounded-[22px] border border-[var(--soft-ivory)] p-5">
-                  <div className="font-display text-lg font-semibold text-[var(--seal-gold)]">Security Functions</div>
-                  <ul className="mt-3 space-y-1 text-sm text-[var(--muted-ivory)]">
-                    <li>Identify</li>
-                    <li>Protect</li>
-                    <li>Detect</li>
-                    <li>Respond</li>
-                    <li>Recover</li>
-                  </ul>
-                </div>
-
-                <div className="text-2xl text-[var(--seal-gold)] hidden md:block">→</div>
-
-                <div className="rounded-[22px] border border-[var(--soft-ivory)] p-5">
-                  <div className="font-display text-lg font-semibold text-[var(--seal-gold)]">Frameworks</div>
-                  <ul className="mt-3 space-y-1 text-sm text-[var(--muted-ivory)]">
-                    <li>NIST CSF</li>
-                    <li>NIST AI RMF</li>
-                    <li>CIS Controls</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="case-studies" className="mt-20 scroll-mt-[7.5rem]">
-            <SectionHeading
-              eyebrow="Case Studies"
-              title="Real work. Real impact. Relentless execution."
-              description="I approach every role, whether help desk, infrastructure, systems support, or administration, with the same mindset: solve the problem, secure the system, improve the process, and follow through."
-            />
-            <div className="space-y-6">
-              {caseStudies.map((study) => (
-                <div key={study.title} className="glass rounded-[26px] border-l-4 p-6 md:p-7" style={{ borderLeftColor: study.accent }}>
-                  <h3 className="font-display text-xl font-semibold text-[var(--ethereal-ivory)]">{study.title}</h3>
-                  <p className="mt-3 text-sm text-[var(--muted-ivory)]">Focus: {study.focus}</p>
-                  <p className="mt-4 text-sm leading-7 text-[rgba(247,235,224,0.88)]">{study.summary}</p>
-                  <ul className="mt-4 space-y-2 text-sm text-[rgba(247,235,224,0.88)]">
-                    {study.bullets.map((bullet) => (
-                      <li key={bullet}>• {bullet}</li>
-                    ))}
-                  </ul>
-                  <p className="mt-4 text-sm text-[var(--seal-gold)]">Result: {study.result}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          
 
           <section id="day1" className="mt-20 scroll-mt-[7.5rem]">
             <SectionHeading

@@ -1,8 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from "./components/Navbar";
-import ConvertedHomepage from './pages/ConvertedHomepage';
+import NickCouryPortfolioHomepage from './NickCouryPortfolioHomepage';
 import About from "./pages/About";
+import ExperiencePage from "./pages/Experience";
+import InitiativesPage from "./pages/Initiatives";
+import FrameworksPage from "./pages/Frameworks";
+import CaseStudiesPage from "./pages/CaseStudies";
+import ContactPage from "./pages/Contact";
 import Blog from "./pages/Blog";
 
 function CloudflareAnalytics() {
@@ -62,10 +67,16 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={isBlogHost ? <Blog /> : <ConvertedHomepage />}
+          element={isBlogHost ? <Blog /> : <NickCouryPortfolioHomepage />}
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
+        <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/initiatives" element={<InitiativesPage />} />
+        
+        <Route path="/frameworks" element={<FrameworksPage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>
   )
