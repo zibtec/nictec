@@ -369,6 +369,14 @@ export default function NickCouryPortfolioHomepage() {
                   <span className="inline-flex items-center gap-2"><MailIcon size={16} /> Let’s Connect</span>
                 </a>
               </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href="/experience" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Experience</a>
+                <a href="/education" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Education</a>
+                <a href="/initiatives" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Project Initiatives</a>
+                <a href="https://www.credly.com/users/nick-coury" target="_blank" rel="noreferrer" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Credentials</a>
+                <a href="/about" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">About</a>
+                <button onClick={() => scrollToSection('contact')} className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Contact</button>
+              </div>
             </div>
 
             <aside className="glass rounded-[30px] p-7 md:p-8">
@@ -424,45 +432,9 @@ export default function NickCouryPortfolioHomepage() {
             </div>
           </section>
 
-          <section id="experience" className="mt-20">
-            <SectionHeading eyebrow="Selected Experience" title="Roles that reflect range, adaptability, and execution" />
-            <div className="space-y-5">
-              {experience.map((item) => (
-                <div key={`${item.role}-${item.period}`} className="glass rounded-[26px] p-6 md:p-7">
-                  <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                    <div>
-                      <h3 className="font-display text-xl font-semibold text-[var(--ethereal-ivory)]">{item.role}</h3>
-                      <div className="mt-1 text-[var(--muted-ivory)]">{item.company}</div>
-                    </div>
-                    <div className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--ethereal-ivory)]">{item.period}</div>
-                  </div>
-                  <p className="mt-4 max-w-4xl text-sm leading-7 text-[rgba(247,235,224,0.88)] md:text-base">{item.summary}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          {/* Selected Experience moved to /experience page */}
 
-          <section id="credentials" className="mt-20 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="glass rounded-[28px] p-7">
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">Credentials</div>
-              <h2 className="font-display mt-3 text-3xl font-bold text-[var(--ethereal-ivory)]">Ongoing professional development</h2>
-              <p className="mt-4 text-sm leading-7 text-[rgba(247,235,224,0.88)] md:text-base">
-                My development path reflects a strong commitment to modern IT, project management, infrastructure, cloud operations, security, AI governance, and process excellence.
-              </p>
-              <div className="mt-6 border-t border-[var(--soft-ivory)] pt-6 text-sm text-[var(--muted-ivory)]">
-                Western Governors University graduate with a Master of Science in Information Technology and additional education in Business Administration and Construction Management.
-              </div>
-            </div>
-            <div className="glass rounded-[28px] p-7">
-              <div className="grid gap-3 sm:grid-cols-2">
-                {certificates.map((cert) => (
-                  <div key={cert} className="rounded-2xl border border-[var(--soft-ivory-2)] bg-[rgba(10,29,72,0.32)] p-4 text-sm leading-6 text-[var(--ethereal-ivory)]">
-                    {cert}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          {/* Credentials section removed from homepage (moved to Education page) */}
 
           <section id="tools" className="mt-20">
             <SectionHeading
@@ -623,7 +595,7 @@ export default function NickCouryPortfolioHomepage() {
 
           <footer className="mt-16 pb-10 text-center">
             <div className="footer-watermark text-xs tracking-wider">
-              © {new Date().getFullYear()} Nick Coury nickcoury.co — All Rights Reserved
+              © {new Date().getFullYear()} Nick Coury — All Rights Reserved
             </div>
           </footer>
         </main>

@@ -4,6 +4,9 @@ import Navbar from "./components/Navbar";
 import NickCouryPortfolioHomepage from './NickCouryPortfolioHomepage';
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import ExperiencePage from "./pages/Experience";
+import InitiativesPage from "./pages/Initiatives";
+import EducationPage from "./pages/Education";
 
 function CloudflareAnalytics() {
   React.useEffect(() => {
@@ -66,6 +69,9 @@ function App() {
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
+        <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/initiatives" element={<InitiativesPage />} />
+        <Route path="/education" element={<EducationPage />} />
       </Routes>
     </Router>
   )
