@@ -45,16 +45,6 @@ export default function NickCouryPortfolioHomepage() {
     }
   };
 
-  const navItems = [
-    ["About", "about"],
-    ["Focus", "focus"],
-    ["Experience", "experience"],
-    ["Frameworks", "frameworks"],
-    ["Case Studies", "case-studies"],
-    ["30-60-90", "day1"],
-    ["Contact", "contact"],
-  ];
-
   const strengths = [
     {
       title: "Project Management & Delivery",
@@ -252,39 +242,6 @@ export default function NickCouryPortfolioHomepage() {
         "Pursuing deeper certifications and technical learning to stay ahead of evolving threats",
       ],
       result: "Positioned to support secure AI adoption, governance, and compliance-driven environments.",
-    },
-  ];
-
-  const phases = [
-    {
-      title: "First 30 Days",
-      accent: "var(--deep-crimson)",
-      bullets: [
-        "Learn systems, SOPs, tools, workflows, and service expectations quickly",
-        "Triage tickets, identify recurring issues, and resolve quick wins",
-        "Validate access control, MFA, endpoint support practices, and documentation",
-        "Build trust by listening, following process, and delivering reliably",
-      ],
-    },
-    {
-      title: "First 60 Days",
-      accent: "var(--regal-navy)",
-      bullets: [
-        "Identify root causes of recurring technical and security issues",
-        "Improve processes for efficiency, reliability, and compliance",
-        "Strengthen documentation, incident handling, and escalation workflows",
-        "Support cloud, endpoint, and infrastructure environments with security alignment",
-      ],
-    },
-    {
-      title: "First 90 Days",
-      accent: "var(--seal-gold)",
-      bullets: [
-        "Recommend improvements aligned with NIST CSF, CIS, and AI RMF principles",
-        "Contribute to system stability, security posture, and audit readiness",
-        "Take ownership of responsibilities while supporting broader team goals",
-        "Continue expanding knowledge through certifications and hands-on application",
-      ],
     },
   ];
 
@@ -535,26 +492,6 @@ export default function NickCouryPortfolioHomepage() {
                     ))}
                   </ul>
                   <p className="mt-4 text-sm text-[var(--seal-gold)]">Result: {study.result}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section id="day1" className="mt-20">
-            <SectionHeading
-              eyebrow="30-60-90 Day Value"
-              title="Ready to contribute immediately while respecting structure, ownership, and role expectations"
-              description="I bring a get-it-done mindset from day one, focused on stabilizing systems, securing access, improving service quality, and identifying opportunities to make operations stronger."
-            />
-            <div className="grid gap-6 md:grid-cols-3">
-              {phases.map((phase) => (
-                <div key={phase.title} className="glass rounded-[26px] border-l-4 p-6" style={{ borderLeftColor: phase.accent }}>
-                  <h3 className="font-display text-xl font-semibold text-[var(--ethereal-ivory)]">{phase.title}</h3>
-                  <ul className="mt-4 space-y-2 text-sm text-[rgba(247,235,224,0.88)]">
-                    {phase.bullets.map((bullet) => (
-                      <li key={bullet}>• {bullet}</li>
-                    ))}
-                  </ul>
                 </div>
               ))}
             </div>
