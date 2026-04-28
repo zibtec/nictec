@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import * as FramerMotion from "framer-motion";
 import profileImage from "../assets/profile.jpg";
 
 const sections = [
@@ -142,7 +142,7 @@ const About = () => {
           </span>
         </div>
 
-        <motion.div
+        <FramerMotion.motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -193,10 +193,10 @@ const About = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </FramerMotion.motion.div>
 
         {sections.map((section, index) => (
-          <motion.div
+          <FramerMotion.motion.div
             key={section.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -211,10 +211,10 @@ const About = () => {
             <div className="space-y-4 leading-7 text-gray-300">
               {section.content}
             </div>
-          </motion.div>
+          </FramerMotion.motion.div>
         ))}
 
-        <motion.div
+        <FramerMotion.motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: sections.length * 0.05 }}
@@ -231,7 +231,7 @@ const About = () => {
               <li>CompTIA Certifications (Network, Security, Project+)</li>
             </ul>
           </div>
-        </motion.div>
+        </FramerMotion.motion.div>
 
         <footer className="mt-16 text-center text-xs tracking-wider text-[var(--seal-gold)]">
           &copy; {new Date().getFullYear()} Nick Coury - All Rights Reserved
@@ -242,4 +242,3 @@ const About = () => {
 };
 
 export default About;
-

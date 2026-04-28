@@ -92,7 +92,7 @@ export default function NickCouryPortfolioHomepage() {
     },
   ];
 
-  const experience = [
+  const _experience = [
     {
       role: "Process Assistant",
       company: "Amazon.com",
@@ -123,7 +123,7 @@ export default function NickCouryPortfolioHomepage() {
     },
   ];
 
-  const certificates = [
+  const _certificates = [
     "CompTIA Network Infrastructure Professional (CNIP®)",
     "Lean Six Sigma Black Belt",
     "CompTIA Project+",
