@@ -526,12 +526,13 @@ export default function NickCouryPortfolioHomepage() {
               </div>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                <a
-                  href="mailto:nick@nickcoury.co"
-                  className="rounded-2xl bg-[var(--deep-crimson)] px-5 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] transition hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)]"
+                <Link
+                  to="/about"
+                  className="rounded-2xl bg-[var(--seal-gold)] px-5 py-3 text-sm font-semibold text-[var(--velvet-obsidian)] transition hover:opacity-95"
+                  onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
                 >
-                  <span className="inline-flex items-center gap-2"><MailIcon size={16} /> Let's Connect</span>
-                </a>
+                  <span className="inline-flex items-center gap-2">Learn More About Me</span>
+                </Link>
               </div>
             </div>
 
@@ -783,17 +784,7 @@ export default function NickCouryPortfolioHomepage() {
                 </a>
               </div>
 
-              <div className="mt-12 text-center">
-                <Link
-                  to="/about"
-                  onClick={() =>
-                    window.scrollTo({ top: 0, left: 0, behavior: "auto" })
-                  }
-                  className="inline-block rounded-2xl border border-[var(--seal-gold)] bg-[rgba(194,145,44,0.12)] px-6 py-3 text-sm font-semibold text-[var(--seal-gold)] shadow-[0_14px_30px_rgba(194,145,44,0.14)] transition hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)]"
-                >
-                  Learn More About Me
-                </Link>
-              </div>
+              
             </div>
           </section>
 
