@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from "./components/Navbar";
-import NickCouryPortfolioHomepage from './NickCouryPortfolioHomepage';
+import ConvertedHomepage from './pages/ConvertedHomepage';
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 
@@ -62,7 +62,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={isBlogHost ? <Blog /> : <NickCouryPortfolioHomepage />}
+          element={isBlogHost ? <Blog /> : <ConvertedHomepage />}
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
