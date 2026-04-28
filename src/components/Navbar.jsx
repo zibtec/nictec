@@ -27,13 +27,17 @@ const Navbar = () => {
         </span>
 
         {/* Navigation Links */}
-        <div className="flex space-x-6">
+        <div className="flex space-x-4">
           <Link to="/" className={linkStyle("/")}>
             Home
           </Link>
-          <Link to="/blog" className={linkStyle("/blog")}>
-            Blog
-          </Link>
+
+          <Link to="/experience" className={linkStyle("/experience")}>Experience</Link>
+
+          <Link to="/education" className={linkStyle("/education")}>Education</Link>
+
+          <Link to="/initiatives" className={linkStyle("/initiatives")}>Projects</Link>
+
           <Link
             to="/about"
             className={linkStyle("/about")}
@@ -41,6 +45,10 @@ const Navbar = () => {
           >
             About
           </Link>
+
+          <Link to="/contact" className={linkStyle("/contact")}>Contact</Link>
+
+          <Link to="/blog" className={linkStyle("/blog")}>Blog</Link>
         </div>
       </div>
     </nav>
