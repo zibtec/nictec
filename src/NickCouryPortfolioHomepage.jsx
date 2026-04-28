@@ -309,14 +309,14 @@ export default function NickCouryPortfolioHomepage() {
         </div>
 
         <header className="sticky top-0 z-50 border-b border-[var(--soft-ivory)] bg-[rgba(23,23,33,0.84)] backdrop-blur-xl">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <div>
-              <div className="font-display text-lg font-semibold tracking-wide text-[var(--seal-gold)]">Nick Coury</div>
-              <div className="text-sm text-[var(--muted-ivory)]">
+          <div className="mx-auto flex max-w-7xl items-center px-6 py-4">
+            <div className="flex-shrink-0">
+              <div className="font-display text-2xl font-semibold tracking-wide text-[var(--seal-gold)]">Nick Coury</div>
+              <div className="text-xs text-[var(--muted-ivory)]">
                 Strategic IT Operations <span className="text-[var(--seal-gold)]">•</span> Security <span className="text-[var(--seal-gold)]">•</span> AI Governance <span className="text-[var(--seal-gold)]">•</span> Operational Resilience
               </div>
             </div>
-            <nav className="hidden gap-3 md:flex">
+            <nav className="hidden gap-3 md:flex ml-auto">
               <Link to="/experience" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
                 Experience
               </Link>
@@ -376,22 +376,7 @@ export default function NickCouryPortfolioHomepage() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-3 pt-2">
-                <a
-                  href="mailto:nick@nickcoury.co"
-                  className="rounded-2xl bg-[var(--deep-crimson)] px-5 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] transition hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)]"
-                >
-                  <span className="inline-flex items-center gap-2"><MailIcon size={16} /> Let’s Connect</span>
-                </a>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href="/experience" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Experience</a>
-                <a href="/education" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Education</a>
-                <a href="/initiatives" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Project Initiatives</a>
-                <a href="https://www.credly.com/users/nick-coury" target="_blank" rel="noreferrer" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Credentials</a>
-                <a href="/about" className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">About</a>
-                <button onClick={() => scrollToSection('contact')} className="rounded-full border border-[rgba(247,235,224,0.12)] px-4 py-2 text-sm font-semibold text-[var(--muted-ivory)] hover:border-[var(--seal-gold)]">Contact</button>
-              </div>
+              {/* Removed redundant mailto button and inline hero nav per request */}
             </div>
 
             <aside className="glass rounded-[30px] p-7 md:p-8">
