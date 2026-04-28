@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MailIcon = ({ size = 18 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -316,15 +317,29 @@ export default function NickCouryPortfolioHomepage() {
               </div>
             </div>
             <nav className="hidden gap-3 md:flex">
-              {navItems.map(([label, id]) => (
-                <button
-                  key={id}
-                  onClick={() => scrollToSection(id)}
-                  className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]"
-                >
-                  {label}
-                </button>
-              ))}
+              <Link to="/experience" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
+                Experience
+              </Link>
+
+              <Link to="/education" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
+                Education
+              </Link>
+
+              <Link to="/initiatives" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
+                Project Initiatives
+              </Link>
+
+              <a href="https://www.credly.com/users/nick-coury" target="_blank" rel="noreferrer" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
+                Credentials
+              </a>
+
+              <Link to="/about" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
+                About
+              </Link>
+
+              <button onClick={() => scrollToSection('contact')} className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]">
+                Contact
+              </button>
             </nav>
           </div>
         </header>
