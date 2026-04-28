@@ -531,7 +531,7 @@ export default function NickCouryPortfolioHomepage() {
                   className="rounded-2xl bg-[var(--seal-gold)] px-5 py-3 text-sm font-semibold text-[var(--velvet-obsidian)] transition hover:opacity-95"
                   onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}
                 >
-                  <span className="inline-flex items-center gap-2">Learn More About Me</span>
+                  <span className="inline-flex items-center gap-2">About</span>
                 </Link>
               </div>
             </div>
