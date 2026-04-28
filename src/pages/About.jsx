@@ -214,6 +214,25 @@ const About = () => {
           </motion.div>
         ))}
 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: sections.length * 0.05 }}
+          viewport={{ once: true }}
+          className="mb-12 border-b border-gray-800 pb-8"
+        >
+          <h2 className="mb-4 text-xl font-semibold text-white">Education & Certifications</h2>
+
+          <div className="space-y-4 leading-7 text-gray-300">
+            <ul className="bullets">
+              <li>Master of Science, Information Technology – WGU (2025)</li>
+              <li>Bachelor of Science, Information Technology – WGU (2025)</li>
+              <li>AWS Certified Cloud Practitioner</li>
+              <li>CompTIA Certifications (Network, Security, Project+)</li>
+            </ul>
+          </div>
+        </motion.div>
+
         <footer className="mt-16 text-center text-xs tracking-wider text-[var(--seal-gold)]">
           &copy; {new Date().getFullYear()} Nick Coury - All Rights Reserved
         </footer>
@@ -223,3 +242,4 @@ const About = () => {
 };
 
 export default About;
+
