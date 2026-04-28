@@ -414,3 +414,8 @@
             font-size: 1.4rem;
           }
         }
+
+      /* Hero link buttons (converted from legacy.css) */
+      .hero-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+      .hero-links .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: var(--seal-gold); color: var(--velvet-obsidian); font-weight: 700; text-decoration: none; }
+      .hero-links .btn.secondary { background: transparent; color: var(--muted-ivory); border: 1px solid rgba(247,235,224,0.08); }
