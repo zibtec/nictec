@@ -9,10 +9,9 @@ export default function EducationPage() {
 
   return (
     <div className="page-root mx-auto max-w-4xl px-6 pb-12 pt-44 lg:pt-32">
-      <div className="mb-6">
-        <Link to="/" className="rounded-full border border-[rgba(255,255,255,0.06)] px-3 py-1 text-sm font-semibold text-gray-300 hover:border-[var(--seal-gold)]">Home</Link>
-      </div>
       <div className="space-y-5">
+        <div className="flex items-center gap-4">
+          <Link to="/" className="rounded-full border px-4 py-2 text-sm text-[var(--muted-ivory)] border-[var(--soft-ivory)] transition hover:border-[var(--seal-gold)]">Home</Link>
         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--seal-gold)]">
           Education & Certifications
         </p>

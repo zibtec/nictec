@@ -138,9 +138,12 @@ export default function InitiativesPage() {
         <section id="summary" data-section className="project-section visible">
           <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--seal-gold)]">
-                Projects & Initiatives / Case Study
-              </p>
+                <div className="mb-2 flex items-center gap-4">
+                  <Link to="/" className="rounded-full border px-4 py-2 text-sm text-[var(--muted-ivory)] border-[var(--soft-ivory)] transition hover:border-[var(--seal-gold)]">Home</Link>
+                </div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--seal-gold)]">
+                  Projects & Initiatives / Case Study
+                </p>
               <h1 className="font-display mt-4 max-w-5xl text-4xl font-bold leading-tight md:text-6xl">
                 <span className="bg-gradient-to-r from-[var(--seal-gold)] via-[var(--ethereal-ivory)] to-[var(--seal-gold)] bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(194,145,44,0.25)]">
                   20+ Years of Leadership.
