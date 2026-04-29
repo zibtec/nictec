@@ -2,7 +2,7 @@
 
 import React from "react";
 import * as FramerMotion from "framer-motion";
-import profileImage from "../assets/profile.jpg";
+import { useNavigate } from "react-router-dom";
 
 const sections = [
   {
@@ -129,6 +129,8 @@ const sections = [
 ];
 
 const About = () => {
+  const navigate = useNavigate();
+
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
@@ -136,64 +138,7 @@ const About = () => {
   return (
     <section className="min-h-screen bg-[#0f111a] px-6 pt-28 pb-20 text-white">
       <div className="mx-auto max-w-4xl">
-        <div className="mb-8">
-          <span className="font-display inline-flex items-center text-sm font-semibold uppercase tracking-[0.18em] text-[var(--seal-gold)]">
-            Nick Coury
-          </span>
-        </div>
-
-        <FramerMotion.motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-14"
-        >
-          <div className="flex flex-col items-start gap-10 md:flex-row">
-            <div className="flex-1">
-              <p className="mb-4 text-sm uppercase tracking-[0.25em] text-gray-400">
-                Professional Journey
-              </p>
-
-              <h1 className="mb-6 text-4xl font-semibold leading-tight text-[var(--seal-gold)] md:text-5xl">
-                Built from the Ground Up - From Structures to Systems
-              </h1>
-
-              <p className="text-lg leading-relaxed text-gray-300">
-                I build secure, resilient systems with the mindset of an
-                operator, the discipline of a builder, and the long-view
-                thinking of a business owner.
-              </p>
-            </div>
-
-            <div className="h-40 w-40 flex-shrink-0 md:h-48 md:w-48">
-              <div className="h-full w-full overflow-hidden rounded-xl border border-gray-700 shadow-lg">
-                <div className="relative h-full w-full">
-                  <img
-                    src={profileImage}
-                    alt="Nick Coury portrait"
-                    className="h-full w-full select-none object-cover grayscale transition duration-500 hover:grayscale-0"
-                    loading="lazy"
-                    draggable="false"
-                    onDragStart={(e) => e.preventDefault()}
-                  />
-
-                  <span
-                    className="absolute bottom-2 left-2 z-10 select-none font-sans text-[9px] font-medium uppercase tracking-[0.18em] text-white/10"
-                    aria-hidden="true"
-                  >
-                    nickcoury.co
-                  </span>
-
-                  <div
-                    className="absolute inset-0 z-20 bg-transparent"
-                    onContextMenu={(e) => e.preventDefault()}
-                    aria-hidden="true"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </FramerMotion.motion.div>
+        {/* Hero removed per request; page content begins here */}
 
         {sections.map((section, index) => (
           <FramerMotion.motion.div
@@ -221,14 +166,38 @@ const About = () => {
           viewport={{ once: true }}
           className="mb-12 border-b border-gray-800 pb-8"
         >
-          <h2 className="mb-4 text-xl font-semibold text-white">Education & Certifications</h2>
+          <h2 className="mb-4 text-xl font-semibold text-white">Education</h2>
 
           <div className="space-y-4 leading-7 text-gray-300">
             <ul className="bullets">
-              <li>Master of Science, Information Technology – WGU (2025)</li>
-              <li>Bachelor of Science, Information Technology – WGU (2025)</li>
-              <li>AWS Certified Cloud Practitioner</li>
-              <li>CompTIA Certifications (Network, Security, Project+)</li>
+              <li className="flex items-center">
+                <span>Master of Science, Information Technology – Western Governors University (May 2025)</span>
+                <button
+                  type="button"
+                  onClick={() => navigate("/about/courses-completed")}
+                  className="ml-3 italic text-sm text-[var(--seal-gold)]"
+                >
+                  Courses completed
+                </button>
+              </li>
+
+              <li className="flex items-center">
+                <span>Bachelor of Science, Information Technology – Western Governors University (Sep 2025)</span>
+                <button
+                  type="button"
+                  onClick={() => window.alert('Courses completed')}
+                  className="ml-3 italic text-sm text-[var(--seal-gold)]"
+                >
+                  Courses completed
+                </button>
+              </li>
+
+              <li>
+                Bachelor of Arts, Liberal Studies – Northern Arizona University (Jun 2004)
+                <div className="italic text-sm">
+                  Focus in Business Administration and an Emphasis in Construction Management
+                </div>
+              </li>
             </ul>
           </div>
         </FramerMotion.motion.div>

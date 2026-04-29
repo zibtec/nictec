@@ -7,6 +7,7 @@ import Blog from "./pages/Blog";
 import ExperiencePage from "./pages/Experience";
 import InitiativesPage from "./pages/Initiatives";
 import EducationPage from "./pages/Education";
+import CoursesCompletedPage from "./pages/CoursesCompleted";
 
 function CloudflareAnalytics() {
   React.useEffect(() => {
@@ -79,6 +80,7 @@ function App() {
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about/courses-completed" element={<CoursesCompletedPage />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/initiatives" element={<InitiativesPage />} />
         <Route path="/education" element={<EducationPage />} />

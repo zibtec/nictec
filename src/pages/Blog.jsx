@@ -112,56 +112,7 @@ export default function Blog() {
   return (
     <section className="portfolio-page-shell px-6 pb-20 pt-44 lg:pt-32">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-[var(--seal-gold)]">
-              Cybersecurity Blog
-            </p>
-            <h1 className="font-display max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
-              <span className="bg-gradient-to-r from-[var(--seal-gold)] via-[var(--ethereal-ivory)] to-[var(--seal-gold)] bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(194,145,44,0.25)]">
-                20+ Years of Leadership.
-              </span>
-              <br />
-              <span className="text-[var(--ethereal-ivory)]">Re-engineered for the Digital Age.</span>
-            </h1>
-            <div className="mt-5 h-[3px] w-32 rounded-full bg-gradient-to-r from-[var(--seal-gold)] to-transparent" />
-            <p className="mt-5 max-w-3xl text-lg leading-8 tracking-widest text-[rgba(247,235,224,0.92)]">
-              <span className="opacity-90">Building Infrastructure</span>
-              <span className="mx-2 text-[var(--seal-gold)]">&mdash;</span>
-              <span className="opacity-90">From Physical Systems to Networks to</span>
-              <span className="ml-2 font-semibold text-[var(--seal-gold)] drop-shadow-[0_0_8px_rgba(194,145,44,0.45)]">
-                Cybersecurity
-              </span>
-            </p>
-            <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--muted-ivory)]">
-              I bring 20+ years of experience leading complex, real-world operations into Information Technology. After building and scaling a construction company alongside a real estate brokerage, I transitioned into IT through hands-on experience in a high-volume, AWS-integrated environment at Amazon&mdash;which led me to complete both a Bachelor&rsquo;s and Master&rsquo;s degree in Information Technology.
-            </p>
-            <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted-ivory)]">
-              Now, I apply that foundation to designing, securing, and optimizing systems focused on reliability, performance, and scalability.
-            </p>
-          </div>
-
-          <div className="glass rounded-[24px] px-5 py-4 text-sm text-[var(--muted-ivory)]">
-            <div>
-              Last updated:{" "}
-              <span className="text-[var(--ethereal-ivory)]">
-                {lastUpdated
-                  ? lastUpdated.toLocaleTimeString([], {
-                      hour: "numeric",
-                      minute: "2-digit",
-                    })
-                  : "Waiting for first refresh"}
-              </span>
-            </div>
-            <button
-              type="button"
-              onClick={() => fetchHeadlines(topic)}
-              className="mt-3 rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--seal-gold)] transition hover:border-[var(--seal-gold)] hover:text-white"
-            >
-              Refresh now
-            </button>
-          </div>
-        </div>
+        {/* Hero removed per request; page content begins here */}
 
         <div className="glass mb-8 rounded-[26px] border-l-4 border-l-[var(--deep-crimson)] p-6 md:p-7">
           <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--seal-gold)]">
