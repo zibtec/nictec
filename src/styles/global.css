@@ -369,58 +369,89 @@
           text-align: center;
         }
 
-        .courses-page-shell {
-          min-height: 100vh;
-          color: var(--ethereal-ivory);
+        .courses-dialog-backdrop {
+          position: fixed;
+          inset: 0;
+          z-index: 80;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1.5rem;
+          background: rgba(0, 0, 0, 0.42);
+          backdrop-filter: blur(8px);
+        }
+
+        .courses-dialog {
+          width: min(25vw, 24rem);
+          min-width: 18rem;
+          max-height: 70vh;
+          overflow: auto;
+          border: 1px solid rgba(194, 145, 44, 0.36);
+          border-radius: 0.75rem;
           background:
-            radial-gradient(circle at 16% 18%, rgba(194, 145, 44, 0.12), transparent 26%),
-            radial-gradient(circle at 84% 20%, rgba(158, 14, 24, 0.1), transparent 28%),
-            linear-gradient(180deg, var(--velvet-obsidian) 0%, #101019 52%, var(--velvet-obsidian) 100%);
+            radial-gradient(circle at 20% 0%, rgba(194, 145, 44, 0.12), transparent 34%),
+            linear-gradient(180deg, var(--velvet-obsidian) 0%, #101019 100%);
+          box-shadow:
+            0 24px 60px rgba(0, 0, 0, 0.46),
+            inset 0 1px 0 rgba(247, 235, 224, 0.08);
+          padding: 1.1rem;
         }
 
-        .courses-page-content {
-          width: min(100%, 56rem);
-          margin: 0 auto;
-          padding: 9rem 1.5rem 6rem;
-        }
-
-        .courses-panel {
-          border-top: 1px solid rgba(194, 145, 44, 0.34);
+        .courses-dialog-header {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 1rem;
           border-bottom: 1px solid rgba(247, 235, 224, 0.1);
-          padding: 2.75rem 0 3rem;
+          padding-bottom: 0.85rem;
         }
 
-        .courses-kicker {
-          margin: 0 0 0.75rem;
+        .courses-dialog-kicker {
+          margin: 0 0 0.25rem;
           color: var(--seal-gold);
-          font-size: 0.8rem;
+          font-size: 0.62rem;
           font-weight: 700;
-          letter-spacing: 0.22em;
+          letter-spacing: 0.18em;
           text-transform: uppercase;
         }
 
-        .courses-heading {
+        .courses-dialog h3 {
           margin: 0;
           color: var(--ethereal-ivory);
-          font-size: clamp(2rem, 4vw, 3.35rem);
-          line-height: 1.1;
+          font-size: 0.95rem;
+          line-height: 1.3;
         }
 
-        .courses-list {
+        .courses-dialog-close {
+          display: inline-flex;
+          width: 1.65rem;
+          height: 1.65rem;
+          flex: 0 0 auto;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid rgba(247, 235, 224, 0.14);
+          border-radius: 999px;
+          background: rgba(247, 235, 224, 0.04);
+          color: var(--seal-gold);
+          cursor: pointer;
+          font-size: 0.85rem;
+          line-height: 1;
+        }
+
+        .courses-dialog-list {
           display: grid;
-          gap: 1rem;
-          margin: 2.5rem 0 0;
+          gap: 0.55rem;
+          margin: 0.9rem 0 0;
           padding: 0;
           color: var(--seal-gold);
-          font-family: 'Lora', serif;
-          font-size: clamp(1.1rem, 2vw, 1.35rem);
-          line-height: 1.65;
+          font-size: 0.76rem;
+          line-height: 1.45;
           list-style: none;
         }
 
-        .courses-list li {
-          border-left: 3px solid rgba(194, 145, 44, 0.58);
-          padding: 0.25rem 0 0.25rem 1rem;
+        .courses-dialog-list li {
+          border-left: 2px solid rgba(194, 145, 44, 0.5);
+          padding-left: 0.65rem;
         }
 
         @media (max-width: 768px) {
