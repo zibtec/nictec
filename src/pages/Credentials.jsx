@@ -2,6 +2,14 @@ import React from "react";
 
 const badges = [
   {
+    title: "CompTIA A+ ce",
+    img: "https://images.credly.com/images/f6d62c5d-1e1d-4de6-92ee-8dc8c80b1c7b/blob",
+  },
+  {
+    title: "CompTIA Security+ ce",
+    img: "https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob",
+  },
+  {
     title: "ITIL 4 Foundation (PeopleCert)",
     img: "https://badges.peoplecert.org/Badges/Template/en/180/63804148-665A-4881-AAC6-EAEC58799A85",
     href: "https://badges.peoplecert.org/Badge/en/3/66D4E3A9-3AA5-433A-BEA5-340230C0686B",
@@ -38,14 +46,8 @@ const badges = [
     title: "CompTIA CSIS",
     img: "https://images.credly.com/images/8090280a-311f-425f-a1cd-a32770b5a444/CompTIA_CSIS.png",
   },
-  {
-    title: "CompTIA Security+ ce",
-    img: "https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob",
-  },
-  {
-    title: "CompTIA A+ ce",
-    img: "https://images.credly.com/images/f6d62c5d-1e1d-4de6-92ee-8dc8c80b1c7b/blob",
-  },
+  
+  
 ];
 
 const Credentials = () => {
