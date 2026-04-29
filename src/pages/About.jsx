@@ -210,6 +210,48 @@ const About = () => {
           </div>
         </FramerMotion.motion.div>
 
+        {showCourses ? (
+          <div
+            className="courses-dialog-backdrop"
+            role="presentation"
+            onClick={() => setShowCourses(false)}
+          >
+            <FramerMotion.motion.div
+              initial={{ opacity: 0, scale: 0.96, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.18 }}
+              className="courses-dialog"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="courses-dialog-title"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="courses-dialog-header">
+                <div>
+                  <p className="courses-dialog-kicker">Courses Completed</p>
+                  <h3 id="courses-dialog-title">
+                    M.S. Information Technology Management
+                  </h3>
+                </div>
+                <button
+                  type="button"
+                  className="courses-dialog-close"
+                  aria-label="Close courses dialog"
+                  onClick={() => setShowCourses(false)}
+                >
+                  x
+                </button>
+              </div>
+
+              <ul className="courses-dialog-list">
+                {completedCourses.map((course) => (
+                  <li key={course}>{course}</li>
+                ))}
+              </ul>
+            </FramerMotion.motion.div>
+          </div>
+        ) : null}
+
         <footer className="mt-16 text-center text-xs tracking-wider text-[var(--seal-gold)]">
           &copy; {new Date().getFullYear()} Nick Coury - All Rights Reserved
         </footer>
