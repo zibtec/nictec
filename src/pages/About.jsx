@@ -2,7 +2,15 @@
 
 import React from "react";
 import * as FramerMotion from "framer-motion";
-import { useNavigate } from "react-router-dom";
+
+const completedCourses = [
+  "MBT2 Technological  Globalization",
+  "LZT2 Power, Influence and  Leadership",
+  "C498 M.S., Information Technology Management",
+  "C927 Operations and Innovation",
+  "C929 IT Sourcing and Development in a Global Economy",
+  "C928 Financial Management for IT Professionals",
+];
 
 const sections = [
   {
@@ -129,7 +137,7 @@ const sections = [
 ];
 
 const About = () => {
-  const navigate = useNavigate();
+  const [showCourses, setShowCourses] = React.useState(false);
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -174,7 +182,7 @@ const About = () => {
                 <span>Master of Science, Information Technology – Western Governors University (May 2025)</span>
                 <button
                   type="button"
-                  onClick={() => navigate("/about/courses-completed")}
+                  onClick={() => setShowCourses(true)}
                   className="ml-3 italic text-sm text-[var(--seal-gold)]"
                 >
                   Courses completed
