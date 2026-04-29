@@ -34,7 +34,8 @@ export default function NickCouryPortfolioHomepage() {
 
   const featuredAreas = [
     "Project management for IT and security initiatives",
-    "Cloud operations (AWS) with security alignment",
+    "Cloud operations (AWS/Azure) with security alignment",
+    "Network infrastructure",
     "Endpoint security and access control (IAM, MFA)",
     "AI security and governance (NIST AI RMF)",
     "Cybersecurity frameworks (NIST CSF, CIS)",
@@ -216,12 +217,12 @@ export default function NickCouryPortfolioHomepage() {
 
   return (
     <div className="min-h-screen text-[var(--ethereal-ivory)]">
-      <div className="portfolio-page-shell min-h-screen">
+      <div className="portfolio-page-shell homepage-no-gold-glow min-h-screen">
         <FloatingSocial />
 
 
-        <main className="mx-auto max-w-7xl px-6 pb-24 pt-44 lg:pt-32">
-          <section id="about" className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <main className="mx-auto max-w-[90rem] px-6 pb-24 pt-44 lg:pt-32">
+          <section id="about" className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-center lg:gap-14 xl:grid-cols-[minmax(0,1fr)_28rem]">
             <div className="space-y-6">
               {/* hero label removed per request */}
               <div className="space-y-5">
@@ -233,13 +234,10 @@ export default function NickCouryPortfolioHomepage() {
                   <span className="text-[var(--ethereal-ivory)]">Re-engineered for the Digital Age.</span>
                 </h1>
                 <div className="h-[3px] w-32 rounded-full bg-gradient-to-r from-[var(--seal-gold)] to-transparent" />
-                <p className="max-w-3xl text-lg leading-8 tracking-widest text-[rgba(247,235,224,0.92)]">
+                <p className="max-w-none text-lg leading-8 tracking-widest text-[rgba(247,235,224,0.92)] xl:whitespace-nowrap">
                   <span className="opacity-90">Building Infrastructure</span>
                   <span className="mx-2 text-[var(--seal-gold)]">&mdash;</span>
-                  <span className="opacity-90">From Physical Systems to Networks to</span>
-                  <span className="ml-2 font-semibold text-[var(--ethereal-ivory)]">
-                    Cybersecurity
-                  </span>
+                  <span className="opacity-90">From Physical Systems to Networks and Cybersecurity</span>
                 </p>
                 <p className="max-w-3xl text-base leading-7 text-[var(--muted-ivory)]">
                   I bring 20+ years of experience leading complex, real-world operations into Information Technology. After building and scaling a construction company alongside a real estate brokerage, I transitioned into IT through hands-on experience in a high-volume, AWS-integrated environment at Amazon&mdash;which led me to complete both a Bachelor&rsquo;s and Master&rsquo;s degree in Information Technology.

@@ -55,6 +55,23 @@
             linear-gradient(180deg, #171721 0%, #0A1D48 48%, #171721 100%);
         }
 
+        .homepage-no-gold-glow {
+          background:
+            radial-gradient(circle at 86% 18%, rgba(10, 29, 72, 0.48), transparent 30%),
+            radial-gradient(circle at 50% 100%, rgba(158, 14, 24, 0.22), transparent 34%),
+            linear-gradient(180deg, #171721 0%, #0A1D48 48%, #171721 100%);
+        }
+
+        .contact-page {
+          min-height: 100vh;
+          color: var(--ethereal-ivory);
+          background:
+            radial-gradient(circle at 18% 16%, rgba(47, 47, 64, 0.34), transparent 30%),
+            radial-gradient(circle at 84% 18%, rgba(36, 36, 51, 0.3), transparent 32%),
+            radial-gradient(circle at 50% 100%, rgba(30, 30, 43, 0.28), transparent 34%),
+            linear-gradient(180deg, var(--velvet-obsidian) 0%, var(--velvet-obsidian) 100%);
+        }
+
         .glass {
           background: var(--panel-bg);
           border: 1px solid rgba(247, 235, 224, 0.12);
@@ -371,6 +388,7 @@
 
         .about-page {
           position: relative;
+          background: var(--velvet-obsidian);
         }
 
         .about-intro-row {

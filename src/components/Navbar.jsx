@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-const Navbar = ({ onOpenContact }) => {
+const Navbar = () => {
   const location = useLocation();
 
   const linkStyle = (path) =>
@@ -9,17 +9,6 @@ const Navbar = ({ onOpenContact }) => {
         ? "border-[var(--seal-gold)] bg-[rgba(194,145,44,0.12)] text-[var(--ethereal-ivory)]"
         : "border-[var(--soft-ivory)]"
     }`;
-
-  const handleContactClick = (event) => {
-    if (location.pathname === "/") {
-      const contact = document.getElementById("contact");
-
-      if (contact) {
-        event.preventDefault();
-        contact.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
-  };
 
   const handleTopClick = (event, path) => {
     if (location.pathname === path) {
@@ -34,9 +23,7 @@ const Navbar = ({ onOpenContact }) => {
         <Link to="/" onClick={(event) => handleTopClick(event, "/")} className="flex-shrink-0 no-underline">
           <div className="font-display text-2xl font-semibold tracking-wide text-[var(--seal-gold)]">Nick Coury</div>
           <div className="text-xs text-[var(--muted-ivory)]">
-            Strategic IT Operations <span className="text-[var(--seal-gold)]">•</span> Security{" "}
-            <span className="text-[var(--seal-gold)]">•</span> AI Governance{" "}
-            <span className="text-[var(--seal-gold)]">•</span> Operational Resilience
+              Develop <span className="text-[var(--seal-gold)]">•</span> Security <span className="text-[var(--seal-gold)]">•</span> Operations
           </div>
         </Link>
 

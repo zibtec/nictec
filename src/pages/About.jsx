@@ -176,7 +176,7 @@ const About = () => {
 
   return (
     <section
-      className="about-page min-h-screen bg-[#0f111a] px-6 pt-28 pb-20 text-white"
+      className="about-page min-h-screen bg-[var(--velvet-obsidian)] px-6 pt-28 pb-20 text-white"
       onContextMenu={(event) => event.preventDefault()}
     >
       <FloatingSocial />
