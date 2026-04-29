@@ -1,4 +1,5 @@
 import React from "react";
+import FloatingSocial from "../components/FloatingSocial";
 
 const navItems = [
   { id: "summary", label: "Summary", icon: "home" },
@@ -130,6 +131,8 @@ export default function InitiativesPage() {
 
   return (
     <div className="project-page portfolio-page-shell">
+      <FloatingSocial />
+
       <main className="mx-auto max-w-7xl px-6 pb-24 pt-44 lg:pt-32">
         <section id="summary" data-section className="project-section visible">
           <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">

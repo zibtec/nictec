@@ -3,10 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from "./components/Navbar";
 import NickCouryPortfolioHomepage from './NickCouryPortfolioHomepage';
 import About from "./pages/About";
-import Blog from "./pages/Blog";
 import ExperiencePage from "./pages/Experience";
 import InitiativesPage from "./pages/Initiatives";
-import EducationPage from "./pages/Education";
 
 function CloudflareAnalytics() {
   React.useEffect(() => {
@@ -62,10 +60,6 @@ function ScrollToTop() {
 }
 
 function App() {
-  const isBlogHost =
-    typeof window !== "undefined" &&
-    window.location.hostname.toLowerCase().startsWith("blog.");
-
   return (
     <Router>
       <CloudflareAnalytics />
@@ -73,15 +67,10 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route
-          path="/"
-          element={isBlogHost ? <Blog /> : <NickCouryPortfolioHomepage />}
-        />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/" element={<NickCouryPortfolioHomepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/initiatives" element={<InitiativesPage />} />
-        <Route path="/education" element={<EducationPage />} />
       </Routes>
     </Router>
   )

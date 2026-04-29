@@ -45,10 +45,6 @@ const Navbar = () => {
             Experience
           </Link>
 
-          <Link to="/education" className={linkStyle("/education")} onClick={(event) => handleTopClick(event, "/education")}>
-            Education
-          </Link>
-
           <Link to="/initiatives" className={linkStyle("/initiatives")} onClick={(event) => handleTopClick(event, "/initiatives")}>
             Project Initiatives
           </Link>
