@@ -215,17 +215,15 @@ export default function NickCouryPortfolioHomepage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[var(--velvet-obsidian)] text-[var(--ethereal-ivory)]">
-      <div className="hero-bg min-h-screen">
+    <div className="min-h-screen text-[var(--ethereal-ivory)]">
+      <div className="portfolio-page-shell min-h-screen">
         <FloatingSocial />
 
 
         <main className="mx-auto max-w-7xl px-6 pb-24 pt-44 lg:pt-32">
           <section id="about" className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="space-y-6">
-              <div className="inline-flex rounded-full border border-[rgba(194,145,44,0.28)] bg-[rgba(194,145,44,0.10)] px-4 py-1 text-xs font-medium uppercase tracking-[0.22em] text-[var(--seal-gold)]">
-                Personal Brand Homepage
-              </div>
+              {/* hero label removed per request */}
               <div className="space-y-5">
                 <h1 className="font-display max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
                   <span className="bg-gradient-to-r from-[var(--seal-gold)] via-[var(--ethereal-ivory)] to-[var(--seal-gold)] bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(194,145,44,0.25)]">
@@ -239,7 +237,7 @@ export default function NickCouryPortfolioHomepage() {
                   <span className="opacity-90">Building Infrastructure</span>
                   <span className="mx-2 text-[var(--seal-gold)]">&mdash;</span>
                   <span className="opacity-90">From Physical Systems to Networks to</span>
-                  <span className="ml-2 font-semibold text-[var(--seal-gold)] drop-shadow-[0_0_8px_rgba(194,145,44,0.45)]">
+                  <span className="ml-2 font-semibold text-[var(--ethereal-ivory)]">
                     Cybersecurity
                   </span>
                 </p>
@@ -414,38 +412,7 @@ export default function NickCouryPortfolioHomepage() {
             </div>
           </section>
 
-          <section id="contact" className="mt-20">
-            <div className="glass rounded-[32px] border-t-4 border-t-[var(--seal-gold)] p-8 text-center md:p-12">
-              <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--seal-gold)]">Let’s Build Something Reliable</div>
-              <h2 className="font-display mx-auto mt-4 max-w-3xl text-3xl font-bold text-[var(--ethereal-ivory)] md:text-4xl">
-                I step into project coordination, systems support, infrastructure administration, or security-focused roles ready to follow established processes, take ownership, and deliver reliable results from day one.
-              </h2>
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                <a
-                  href="mailto:nick@nickcoury.co"
-                  className="rounded-2xl bg-[var(--deep-crimson)] px-6 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] transition hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)]"
-                >
-                  <span className="inline-flex items-center gap-2"><MailIcon size={16} /> Contact Me</span>
-                </a>
-                <a
-                  href="http://www.linkedin.com/in/nickacoury"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-2xl bg-[#0A66C2] px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(10,102,194,0.35)] transition duration-200 hover:scale-[1.04] hover:bg-[#004182] hover:shadow-[0_18px_40px_rgba(10,102,194,0.45)]"
-                >
-                  <span className="inline-flex items-center gap-2"><LinkedInIcon size={16} /> LinkedIn</span>
-                </a>
-                <a
-                  href="https://www.credly.com/users/nick-coury"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-2xl border border-[var(--soft-ivory)] px-6 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--seal-gold)]"
-                >
-                  <span className="inline-flex items-center gap-2"><AwardIcon size={16} /> View Certifications</span>
-                </a>
-              </div>
-            </div>
-          </section>
+          {/* Contact form moved to a modal triggered from the Navbar */}
 
           <footer className="mt-16 pb-10 text-center">
             <div className="footer-watermark text-xs tracking-wider">

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ onOpenContact }) => {
   const location = useLocation();
 
   const linkStyle = (path) =>
@@ -49,20 +49,15 @@ const Navbar = () => {
             Project Initiatives
           </Link>
 
-          <a
-            href="https://www.credly.com/users/nick-coury"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]"
-          >
+          <Link to="/credentials" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]" onClick={(event) => handleTopClick(event, "/credentials")}>
             Credentials
-          </a>
+          </Link>
 
           <Link to="/about" className={linkStyle("/about")} onClick={(event) => handleTopClick(event, "/about")}>
             About
           </Link>
 
-          <Link to="/#contact" className={linkStyle("/#contact")} onClick={handleContactClick}>
+          <Link to="/contact" className={linkStyle("/contact")} onClick={(event) => handleTopClick(event, "/contact")}>
             Contact
           </Link>
         </nav>
