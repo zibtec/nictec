@@ -30,15 +30,15 @@ export default function FloatingSocial() {
   return (
     <div className="floating-social">
       <div className="floating-rail" />
-      <a href="mailto:nick@nickcoury.co" className="social-link">
+      <a href="mailto:nick@nickcoury.co" className="social-link" aria-label="Email Nick Coury">
         <span className="social-orb email"><MailIcon size={18} /></span>
         <span className="social-tooltip">Email</span>
       </a>
-      <a href="http://www.linkedin.com/in/nickacoury" target="_blank" rel="noreferrer" className="social-link">
+      <a href="https://www.linkedin.com/in/nickacoury" target="_blank" rel="noreferrer" className="social-link" aria-label="Nick Coury on LinkedIn">
         <span className="social-orb linkedin"><LinkedInIcon size={18} /></span>
         <span className="social-tooltip">LinkedIn</span>
       </a>
-      <a href="https://www.credly.com/users/nick-coury" target="_blank" rel="noreferrer" className="social-link">
+      <a href="https://www.credly.com/users/nick-coury" target="_blank" rel="noreferrer" className="social-link" aria-label="Nick Coury certifications on Credly">
         <span className="social-orb credly"><AwardIcon size={18} /></span>
         <span className="social-tooltip">Certifications</span>
       </a>

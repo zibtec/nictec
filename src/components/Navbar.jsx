@@ -36,7 +36,7 @@ const Navbar = () => {
             Project Initiatives
           </Link>
 
-          <Link to="/credentials" className="rounded-full border border-[var(--soft-ivory)] px-4 py-2 text-sm text-[var(--muted-ivory)] transition hover:border-[var(--seal-gold)] hover:text-[var(--ethereal-ivory)]" onClick={(event) => handleTopClick(event, "/credentials")}>
+          <Link to="/credentials" className={linkStyle("/credentials")} onClick={(event) => handleTopClick(event, "/credentials")}>
             Credentials
           </Link>
 

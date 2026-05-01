@@ -23,10 +23,12 @@ const Contact = () => {
             const email = form.email.value.trim();
             const message = form.message.value.trim();
 
-            const subject = `Website Contact from ${name || "Guest"}`;
-            const body = `Name: ${name}%0D%0ACompany: ${company}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
+            const subject = encodeURIComponent(`Website Contact from ${name || "Guest"}`);
+            const body = encodeURIComponent(
+              `Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\n${message}`
+            );
 
-            window.location.href = `mailto:nick@nickcoury.co?subject=${encodeURIComponent(subject)}&body=${body}`;
+            window.location.href = `mailto:nick@nickcoury.co?subject=${subject}&body=${body}`;
           }}
           className="mt-6 max-w-2xl text-left"
         >

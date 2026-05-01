@@ -1,5 +1,5 @@
 import React from "react";
-import FloatingSocial, { AwardIcon, LinkedInIcon, MailIcon } from "./components/FloatingSocial";
+import FloatingSocial from "./components/FloatingSocial";
 
 const SectionHeading = ({ eyebrow, title, description }) => (
   <div className="mb-8 max-w-3xl">
@@ -409,8 +409,6 @@ export default function NickCouryPortfolioHomepage() {
               ))}
             </div>
           </section>
-
-          {/* Contact form moved to a modal triggered from the Navbar */}
 
           <footer className="mt-16 pb-10 text-center">
             <div className="footer-watermark text-xs tracking-wider">

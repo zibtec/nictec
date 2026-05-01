@@ -88,8 +88,8 @@ const Credentials = () => {
           </a>
         </div>
 
-        <div className="mt-8 flex items-start gap-8">
-          <div>
+        <div className="mt-8 flex flex-col items-start gap-8 lg:flex-row">
+          <div className="shrink-0">
             <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="162e9f4a-cefd-46f7-94de-3ae6ebdc78f0" data-share-badge-host="https://www.credly.com"></div>
           </div>
 
