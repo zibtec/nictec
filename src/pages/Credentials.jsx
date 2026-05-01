@@ -1,4 +1,5 @@
 import React from "react";
+import FloatingSocial from "../components/FloatingSocial";
 
 const badges = [
   {
@@ -69,6 +70,8 @@ const Credentials = () => {
 
   return (
     <section className="portfolio-page-shell min-h-screen px-6 pt-28 pb-20 text-[var(--ethereal-ivory)]">
+      <FloatingSocial />
+
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between">
           <div>

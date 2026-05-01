@@ -1,4 +1,5 @@
 import React from "react";
+import FloatingSocial from "../components/FloatingSocial";
 import experienceData from "../data/experience-data";
 
 export default function ExperiencePage() {
@@ -8,6 +9,8 @@ export default function ExperiencePage() {
 
   return (
     <div className="portfolio-page-shell">
+      <FloatingSocial />
+
       <main className="page-root mx-auto max-w-4xl px-6 pb-12 pt-44 lg:pt-32">
       {/* Hero removed per request; content begins here */}
       <div className="mt-8 space-y-6">

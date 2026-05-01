@@ -1,4 +1,5 @@
 import React from "react";
+import FloatingSocial from "../components/FloatingSocial";
 
 const Contact = () => {
   React.useEffect(() => {
@@ -7,6 +8,8 @@ const Contact = () => {
 
   return (
     <section className="contact-page min-h-screen px-6 pt-28 pb-20 text-[var(--ethereal-ivory)]">
+      <FloatingSocial />
+
       <div className="mx-auto max-w-4xl">
         <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--seal-gold)]">Contact</div>
         <h1 className="font-display mt-3 text-2xl font-semibold text-[var(--ethereal-ivory)]">Get in touch</h1>

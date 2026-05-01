@@ -232,22 +232,6 @@ export default function InitiativesPage() {
             <h2 className="font-display mx-auto mt-4 max-w-3xl text-3xl font-bold text-[var(--ethereal-ivory)] md:text-4xl">
               Infrastructure work is where planning, security, documentation, and reliability meet.
             </h2>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a
-                href="mailto:nick@nickcoury.co"
-                className="rounded-2xl bg-[var(--deep-crimson)] px-6 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] transition hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)]"
-              >
-                Email Nick
-              </a>
-              <a
-                href="https://linkedin.com/in/nickacoury"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl bg-[#0A66C2] px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(10,102,194,0.35)] transition hover:scale-[1.04] hover:bg-[#004182]"
-              >
-                LinkedIn
-              </a>
-            </div>
           </div>
         </section>
       </main>
