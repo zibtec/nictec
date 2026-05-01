@@ -61,7 +61,7 @@ const Credentials = () => {
     return () => {
       try {
         document.body.removeChild(script);
-      } catch (e) {
+      } catch {
         /* ignore */
       }
     };

@@ -23,7 +23,7 @@ const Navbar = () => {
         <Link to="/" onClick={(event) => handleTopClick(event, "/")} className="flex-shrink-0 no-underline">
           <div className="font-display text-2xl font-semibold tracking-wide text-[var(--seal-gold)]">Nick Coury</div>
           <div className="text-xs text-[var(--muted-ivory)]">
-              Develop <span className="text-[var(--seal-gold)]">•</span> Security <span className="text-[var(--seal-gold)]">•</span> Operations
+            Develop, Secure, Operate
           </div>
         </Link>
 

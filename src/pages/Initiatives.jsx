@@ -67,7 +67,7 @@ const projects = [
   {
     number: "03",
     title: "PCIe 5 AI-Ready Workstation",
-    year: "2022",
+    year: "2025",
     icon: "cpu",
     text:
       "Built a high-performance workstation designed for AI workloads, virtualization, compute-heavy learning, and long-term platform expansion.",
