@@ -1,16 +1,18 @@
-# React + Vite
+# Nick Coury Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite portfolio site.
 
-Currently, two official plugins are available:
+## Contact Form Security
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The contact form uses Cloudflare Turnstile and a backend API route at `/api/contact`.
+The browser widget creates a Turnstile token, then the backend validates that token with Cloudflare Siteverify before the email draft is opened.
 
-## React Compiler
+For local development, copy `.env.example` to `.env.local`. The example uses Cloudflare's public testing keys.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+For production, set these environment variables in Cloudflare Pages:
 
-## Expanding the ESLint configuration
+- `VITE_TURNSTILE_SITE_KEY`: the public Turnstile site key.
+- `TURNSTILE_SECRET_KEY`: the private Turnstile secret key for the Pages Function.
+- `TURNSTILE_ALLOWED_HOSTNAMES`: optional comma-separated hostnames, such as `nickcoury.co,www.nickcoury.co`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Never expose `TURNSTILE_SECRET_KEY` in client-side code.
