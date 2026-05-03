@@ -1,6 +1,7 @@
 # Nick Coury Portfolio
 
-React + Vite portfolio site.
+Welcome to my personal React + Vite portfolio site.  This site was created to display everything learned over the last few years in a strategic pivot career change.  My web development course has taught me how to code this website.  The intent of using Github is a way to build, showcase and deploy this website to  further detail my resume from my 20+ years of industry and career experience.
+
 
 ## Contact Form Security
 
