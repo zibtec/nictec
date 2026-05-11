@@ -1,4 +1,5 @@
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const CONTACT_EMAIL = "nick@nickcoury.co";
 const NAME_PATTERN = /^[A-Za-z][A-Za-z' -]{2,}$/;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -48,6 +49,16 @@ const getAllowedHostnames = (env) =>
     .split(",")
     .map((hostname) => hostname.trim().toLowerCase())
     .filter(Boolean);
+
+const buildContactMailto = ({ firstName, lastName, company, email, message }) => {
+  const fullName = `${firstName} ${lastName}`;
+  const subject = encodeURIComponent(`Website Contact from ${fullName}`);
+  const body = encodeURIComponent(
+    `First Name: ${firstName}\nLast Name: ${lastName}\nCompany: ${company}\nEmail: ${email}\n\n${message}`
+  );
+
+  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+};
 
 const verifyTurnstile = async ({ token, request, env }) => {
   const secret = cleanText(env.TURNSTILE_SECRET_KEY);
@@ -145,6 +156,7 @@ export async function onRequestPost(context) {
 
   return json({
     ok: true,
+    mailtoUrl: buildContactMailto(payload),
     contact: {
       firstName: payload.firstName,
       lastName: payload.lastName,

@@ -108,14 +108,8 @@ const Contact = () => {
                 throw new Error(result.message || "Unable to verify this submission.");
               }
 
-              const fullName = `${firstName} ${lastName}`;
-              const subject = encodeURIComponent(`Website Contact from ${fullName}`);
-              const body = encodeURIComponent(
-                `First Name: ${firstName}\nLast Name: ${lastName}\nCompany: ${company}\nEmail: ${email}\n\n${message}`
-              );
-
               setStatus("Verification passed. Opening your email client...");
-              window.location.href = `mailto:nick@nickcoury.co?subject=${subject}&body=${body}`;
+              window.location.href = result.mailtoUrl;
             } catch (error) {
               setStatus(error.message);
               resetTurnstile();
