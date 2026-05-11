@@ -2,7 +2,7 @@ import React from "react";
 import FloatingSocial from "../components/FloatingSocial";
 
 const namePattern = "[A-Za-z][A-Za-z' -]{2,}";
-const fallbackTurnstileSiteKey = import.meta.env.DEV ? "1x00000000000000000000AA" : "";
+const fallbackTurnstileSiteKey = import.meta.env.DEV ? "1x00000000000000000000AA" : "0x4AAAAAADNbV5pyKhQtCVne";
 const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY || fallbackTurnstileSiteKey;
 
 const Contact = () => {
