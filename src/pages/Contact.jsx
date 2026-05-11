@@ -8,6 +8,7 @@ const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY || fallbackTurn
 const Contact = () => {
   const [status, setStatus] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isTurnstileVerified, setIsTurnstileVerified] = React.useState(false);
   const turnstileRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -30,7 +31,25 @@ const Contact = () => {
     };
   }, []);
 
+  React.useEffect(() => {
+    window.enableSubmit = () => {
+      setIsTurnstileVerified(true);
+      setStatus("");
+    };
+
+    window.disableSubmit = () => {
+      setIsTurnstileVerified(false);
+    };
+
+    return () => {
+      delete window.enableSubmit;
+      delete window.disableSubmit;
+    };
+  }, []);
+
   const resetTurnstile = () => {
+    setIsTurnstileVerified(false);
+
     if (window.turnstile && turnstileRef.current) {
       window.turnstile.reset(turnstileRef.current);
     }
@@ -183,6 +202,9 @@ const Contact = () => {
                 className="cf-turnstile"
                 data-sitekey={turnstileSiteKey}
                 data-action="contact"
+                data-callback="enableSubmit"
+                data-expired-callback="disableSubmit"
+                data-error-callback="disableSubmit"
                 data-theme="dark"
               />
             ) : (
@@ -201,7 +223,7 @@ const Contact = () => {
           <div className="mt-6 text-right">
             <button
               type="submit"
-              disabled={isSubmitting || !turnstileSiteKey}
+              disabled={isSubmitting || !turnstileSiteKey || !isTurnstileVerified}
               className="rounded-2xl bg-[var(--deep-crimson)] px-6 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] shadow-[0_12px_28px_rgba(158,14,24,0.18)] transition duration-200 hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)] hover:shadow-[0_16px_34px_rgba(194,145,44,0.22)] active:bg-[var(--velvet-obsidian)] active:text-[var(--ethereal-ivory)] active:shadow-[0_10px_22px_rgba(23,23,33,0.45)] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isSubmitting ? "Verifying..." : "Send"}
