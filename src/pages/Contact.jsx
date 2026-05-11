@@ -8,6 +8,7 @@ const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY || fallbackTurn
 const Contact = () => {
   const [status, setStatus] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isFormValid, setIsFormValid] = React.useState(false);
   const [isTurnstileVerified, setIsTurnstileVerified] = React.useState(false);
   const turnstileRef = React.useRef(null);
 
@@ -55,6 +56,10 @@ const Contact = () => {
     }
   };
 
+  const updateFormValidity = (form) => {
+    setIsFormValid(form.checkValidity());
+  };
+
   return (
     <section className="contact-page min-h-screen px-6 pt-28 pb-20 text-[var(--ethereal-ivory)]">
       <FloatingSocial />
@@ -64,6 +69,8 @@ const Contact = () => {
         <h1 className="font-display mt-3 text-2xl font-semibold text-[var(--ethereal-ivory)]">Get in touch</h1>
 
         <form
+          onInput={(e) => updateFormValidity(e.currentTarget)}
+          onChange={(e) => updateFormValidity(e.currentTarget)}
           onSubmit={async (e) => {
             e.preventDefault();
             const form = e.target;
@@ -75,6 +82,7 @@ const Contact = () => {
             const turnstileToken = new FormData(form).get("cf-turnstile-response");
 
             if (!form.checkValidity()) {
+              updateFormValidity(form);
               form.reportValidity();
               return;
             }
@@ -217,7 +225,7 @@ const Contact = () => {
           <div className="mt-6 text-right">
             <button
               type="submit"
-              disabled={isSubmitting || !turnstileSiteKey || !isTurnstileVerified}
+              disabled={isSubmitting || !turnstileSiteKey || !isFormValid || !isTurnstileVerified}
               className="rounded-2xl bg-[var(--deep-crimson)] px-6 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] shadow-[0_12px_28px_rgba(158,14,24,0.18)] transition duration-200 hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)] hover:shadow-[0_16px_34px_rgba(194,145,44,0.22)] active:bg-[var(--velvet-obsidian)] active:text-[var(--ethereal-ivory)] active:shadow-[0_10px_22px_rgba(23,23,33,0.45)] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isSubmitting ? "Verifying..." : "Send"}
