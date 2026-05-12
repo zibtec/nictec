@@ -11,48 +11,55 @@ const Contact = () => {
   const [isFormValid, setIsFormValid] = React.useState(false);
   const [isTurnstileVerified, setIsTurnstileVerified] = React.useState(false);
   const turnstileRef = React.useRef(null);
+  const turnstileWidgetIdRef = React.useRef(null);
 
   React.useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
   React.useEffect(() => {
-    if (!turnstileSiteKey || document.querySelector('script[src*="challenges.cloudflare.com/turnstile"]')) {
+    if (!turnstileSiteKey || !turnstileRef.current) {
       return undefined;
     }
 
-    const script = document.createElement("script");
-    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+    let timeoutId;
+
+    const renderTurnstile = () => {
+      if (!window.turnstile || turnstileWidgetIdRef.current) {
+        timeoutId = window.setTimeout(renderTurnstile, 100);
+        return;
+      }
+
+      turnstileWidgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+        sitekey: turnstileSiteKey,
+        action: "contact",
+        theme: "dark",
+        callback: () => {
+          setIsTurnstileVerified(true);
+          setStatus("");
+        },
+        "expired-callback": () => setIsTurnstileVerified(false),
+        "error-callback": () => setIsTurnstileVerified(false),
+      });
+    };
+
+    renderTurnstile();
 
     return () => {
-      script.remove();
-    };
-  }, []);
+      window.clearTimeout(timeoutId);
 
-  React.useEffect(() => {
-    window.enableSubmit = () => {
-      setIsTurnstileVerified(true);
-      setStatus("");
-    };
-
-    window.disableSubmit = () => {
-      setIsTurnstileVerified(false);
-    };
-
-    return () => {
-      delete window.enableSubmit;
-      delete window.disableSubmit;
+      if (window.turnstile && turnstileWidgetIdRef.current) {
+        window.turnstile.remove(turnstileWidgetIdRef.current);
+        turnstileWidgetIdRef.current = null;
+      }
     };
   }, []);
 
   const resetTurnstile = () => {
     setIsTurnstileVerified(false);
 
-    if (window.turnstile && turnstileRef.current) {
-      window.turnstile.reset(turnstileRef.current);
+    if (window.turnstile && turnstileWidgetIdRef.current) {
+      window.turnstile.reset(turnstileWidgetIdRef.current);
     }
   };
 
@@ -199,16 +206,7 @@ const Contact = () => {
 
           <div className="mt-5">
             {turnstileSiteKey ? (
-              <div
-                ref={turnstileRef}
-                className="cf-turnstile"
-                data-sitekey={turnstileSiteKey}
-                data-action="contact"
-                data-callback="enableSubmit"
-                data-expired-callback="disableSubmit"
-                data-error-callback="disableSubmit"
-                data-theme="dark"
-              />
+              <div ref={turnstileRef} />
             ) : (
               <p className="text-sm text-[var(--seal-gold)]">
                 Security verification is not configured. Add VITE_TURNSTILE_SITE_KEY before publishing.
