@@ -1,4 +1,5 @@
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const RESEND_EMAILS_URL = "https://api.resend.com/emails";
 const CONTACT_EMAIL = "nick@nickcoury.co";
 const NAME_PATTERN = /^[A-Za-z][A-Za-z' -]{2,}$/;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -13,6 +14,13 @@ const json = (body, status = 200) =>
   });
 
 const cleanText = (value) => (typeof value === "string" ? value.trim() : "");
+const escapeHtml = (value) =>
+  cleanText(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 
 const validatePayload = ({ firstName, lastName, company, email, message, turnstileToken }) => {
   const errors = {};
@@ -58,6 +66,61 @@ const buildContactMailto = ({ firstName, lastName, company, email, message }) =>
   );
 
   return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+};
+
+const buildContactEmail = ({ firstName, lastName, company, email, message }) => {
+  const fullName = `${firstName} ${lastName}`;
+  const subject = `Website Contact from ${fullName}`;
+  const text = `First Name: ${firstName}
+Last Name: ${lastName}
+Company: ${company}
+Email: ${email}
+
+${message}`;
+  const html = `<h2>Website Contact</h2>
+<p><strong>First Name:</strong> ${escapeHtml(firstName)}</p>
+<p><strong>Last Name:</strong> ${escapeHtml(lastName)}</p>
+<p><strong>Company:</strong> ${escapeHtml(company)}</p>
+<p><strong>Email:</strong> ${escapeHtml(email)}</p>
+<p><strong>Message:</strong></p>
+<p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`;
+
+  return { subject, text, html };
+};
+
+const sendContactEmail = async ({ payload, env }) => {
+  const apiKey = cleanText(env.RESEND_API_KEY);
+  const from = cleanText(env.CONTACT_FROM_EMAIL || env.RESEND_FROM_EMAIL);
+  const to = cleanText(env.CONTACT_TO_EMAIL || CONTACT_EMAIL);
+
+  if (!apiKey || !from) {
+    return { configured: false };
+  }
+
+  const email = buildContactEmail(payload);
+  const response = await fetch(RESEND_EMAILS_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+      "Idempotency-Key": crypto.randomUUID(),
+    },
+    body: JSON.stringify({
+      from,
+      to,
+      subject: email.subject,
+      text: email.text,
+      html: email.html,
+      reply_to: payload.email,
+    }),
+  });
+
+  if (!response.ok) {
+    return { configured: true, sent: false };
+  }
+
+  const result = await response.json();
+  return { configured: true, sent: true, id: result.id };
 };
 
 const verifyTurnstile = async ({ token, request, env }) => {
@@ -154,9 +217,38 @@ export async function onRequestPost(context) {
     return json({ ok: false, message: "Security verification failed." }, 400);
   }
 
+  const mailtoUrl = buildContactMailto(payload);
+  let emailDelivery;
+
+  try {
+    emailDelivery = await sendContactEmail({ payload, env });
+  } catch {
+    return json(
+      {
+        ok: false,
+        message: "Your request was verified, but email delivery is unavailable. Please try again later.",
+        mailtoUrl,
+      },
+      502
+    );
+  }
+
+  if (emailDelivery.configured && !emailDelivery.sent) {
+    return json(
+      {
+        ok: false,
+        message: "Your request was verified, but email delivery failed. Please try again later.",
+        mailtoUrl,
+      },
+      502
+    );
+  }
+
   return json({
     ok: true,
-    mailtoUrl: buildContactMailto(payload),
+    sent: Boolean(emailDelivery.sent),
+    emailId: emailDelivery.id,
+    mailtoUrl,
     contact: {
       firstName: payload.firstName,
       lastName: payload.lastName,

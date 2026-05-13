@@ -6,7 +6,7 @@ Welcome to my personal React + Vite portfolio site.  This site was created to di
 
 The contact form uses Cloudflare Turnstile and a backend API route at `/api/contact`.
 On Cloudflare Pages, `functions/api/contact.js` is the Pages Function that handles the contact page submission from `src/pages/Contact.jsx`.
-The browser widget creates a Turnstile token, then the backend validates that token with Cloudflare Siteverify before the email draft is opened.
+The browser widget creates a Turnstile token, then the backend validates that token with Cloudflare Siteverify before sending the email. If email delivery is not configured, the verified fallback opens an email draft with the form details.
 
 For local development, copy `.env.example` to `.env.local`. The example uses Cloudflare's public testing keys.
 
@@ -16,5 +16,9 @@ For production, set these environment variables in Cloudflare Pages:
 - `VITE_CONTACT_API_ENDPOINT`: optional contact endpoint override. Defaults to `/api/contact`.
 - `TURNSTILE_SECRET_KEY`: the private Turnstile secret key for the Pages Function.
 - `TURNSTILE_ALLOWED_HOSTNAMES`: optional comma-separated hostnames, such as `nickcoury.co,www.nickcoury.co`.
+- `RESEND_API_KEY`: optional Resend API key for server-side email delivery.
+- `CONTACT_FROM_EMAIL`: required for Resend delivery, such as `Portfolio <contact@nickcoury.co>`.
+- `CONTACT_TO_EMAIL`: optional recipient override. Defaults to `nick@nickcoury.co`.
 
 Never expose `TURNSTILE_SECRET_KEY` in client-side code.
+Never expose `RESEND_API_KEY` in client-side code.
