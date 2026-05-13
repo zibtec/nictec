@@ -4,6 +4,7 @@ import FloatingSocial from "../components/FloatingSocial";
 const namePattern = "[A-Za-z][A-Za-z' -]{2,}";
 const fallbackTurnstileSiteKey = import.meta.env.DEV ? "1x00000000000000000000AA" : "0x4AAAAAADNbV5pyKhQtCVne";
 const turnstileSiteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY || fallbackTurnstileSiteKey;
+const contactApiEndpoint = import.meta.env.VITE_CONTACT_API_ENDPOINT || "/api/contact";
 
 const Contact = () => {
   const [status, setStatus] = React.useState("");
@@ -104,7 +105,7 @@ const Contact = () => {
             setStatus("Verifying your request...");
 
             try {
-              const response = await fetch("/api/contact", {
+              const response = await fetch(contactApiEndpoint, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
