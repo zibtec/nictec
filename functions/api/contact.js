@@ -177,7 +177,13 @@ export async function onRequestPost(context) {
   }
 
   if (!cleanText(env.TURNSTILE_SECRET_KEY)) {
-    return json({ ok: false, message: "Security verification is not configured." }, 500);
+    return json(
+      {
+        ok: false,
+        message: "Server security verification is not configured. Add TURNSTILE_SECRET_KEY in Cloudflare Pages.",
+      },
+      500
+    );
   }
 
   let verification;
