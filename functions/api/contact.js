@@ -166,7 +166,3 @@ export async function onRequestPost(context) {
     },
   });
 }
-
-export function onRequest() {
-  return json({ ok: false, message: "Method not allowed." }, 405);
-}
