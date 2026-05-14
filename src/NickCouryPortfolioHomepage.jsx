@@ -16,19 +16,19 @@ const SectionHeading = ({ eyebrow, title, description }) => (
 export default function NickCouryPortfolioHomepage() {
   const strengths = [
     {
-      title: "Project Management & Delivery",
+      title: "Project Management, Operations & Delivery",
       description:
-        "Driving structured execution across IT, security, cloud, and support initiatives using PMBOK®, Agile, and ITIL to produce measurable outcomes, accountability, and operational efficiency.",
-    },
+        "Applying structured project management and operational leadership principles across technology, infrastructure, security, and process improvement initiatives with a focus on accountability, execution, and measurable outcomes. Leveraging PMBOK®, Agile, Lean process improvement, and ITIL-aligned practices to support workflow coordination, stakeholder communication, risk management, documentation, and continuous operational improvement throughout the project lifecycle."
+  },
     {
-      title: "IT Operations, Infrastructure & Security",
+      title: "Network Infrastructure & Security",
       description:
-        "Integrating endpoint support, infrastructure troubleshooting, identity controls, and security practices including IAM, MFA, incident response, and monitoring aligned to NIST CSF and CIS Controls.",
+        "Designing, building, and securing hands-on network infrastructure through VLAN segmentation, structured connectivity, endpoint integration, secure remote access, and infrastructure troubleshooting. Implementing layered security controls including access restrictions, MFA, traffic isolation, monitoring, logging, firewall policies, and defense-in-depth practices to strengthen network reliability, visibility, and operational security across connected environments."
     },
     {
       title: "Cloud, AI & Governance",
       description:
-        "Supporting cloud and emerging AI systems with a security-first mindset, using governance, risk management, and compliance frameworks including NIST AI RMF to encourage responsible adoption of modern technologies.",
+        "Exploring the intersection of cloud technologies, AI systems, cybersecurity governance, and enterprise risk management through hands-on learning and framework-aligned research. Expanding knowledge of governance, compliance, and operational security concepts using industry and government-aligned frameworks including NIST CSF, NIST 800-53, NIST AI RMF, ISO 27001, CIS Controls, and FedRAMP-oriented security principles to better understand how modern cloud and AI environments are secured, governed, monitored, and managed within regulated and enterprise-scale operations."
     },
   ];
 
@@ -62,34 +62,34 @@ export default function NickCouryPortfolioHomepage() {
     },
   ];
 
-  const _experience = [
+  const experienceData = [
     {
       role: "Process Assistant",
       company: "Amazon.com",
       period: "2021 - 2023",
       summary:
-        "Managed IT and warehouse support within a high-volume AWS environment; resolved network, endpoint, and MFA hurdles to maintain seamless daily output and personnel performance.",
+        "Supported IT and operational continuity within a high-volume, AWS-integrated robotics environment by resolving hardware, software, network, access, and MFA-related issues impacting workflow performance. Collaborated across teams to improve system reliability, reduce recurring technical incidents, and maintain security-focused operational standards aligned with data integrity and compliance practices.",
     },
     {
       role: "Learning Ambassador / Fulfillment Associate",
       company: "Amazon.com",
       period: "2019 - 2021",
       summary:
-        "Trained and mentored team members on systems, workflows, and security-aligned procedures while reinforcing operational consistency and compliance-focused habits.",
+        "Trained and mentored team members on operational systems, workflows, and security-aligned procedures within a fast-paced, high-volume environment. Reinforced process consistency, compliance standards, and performance expectations while supporting onboarding, knowledge transfer, and day-to-day operational efficiency.",
     },
     {
       role: "Real Estate Broker / Network Administrator",
       company: "Great American Investment Corp.",
       period: "1999 - 2025",
       summary:
-        "Balanced regulated brokerage operations with network administration, deploying seamless digital integrations that empowered agents to scale their individual businesses and execute smoother transactions while ensuring total alignment with regulatory mandates and data security.",
+        "Managed secure business infrastructure and regulated brokerage operations by administering internal systems, access controls, monitoring practices, and digital workflow solutions supporting transactional operations and sensitive client data. Improved operational efficiency and scalability through technology integrations, process modernization, and compliance-focused information governance.",
     },
     {
       role: "Founder / IT Manager / Qualifying Party",
       company: "Around the Mountain Builders",
       period: "2004 - 2019",
       summary:
-        "Founded and led a multi-site operation delivering turn-key projects, energy efficiency, integrated infrastructure, and standardized practices that optimized performance and reliability.",
+        "Founded and operated a multi-site organization delivering integrated project execution, operational standardization, and technology-enabled infrastructure management. Designed scalable workflows, documentation systems, and process improvements that strengthened efficiency, operational reliability, and long-term business continuity.",
     },
   ];
 
@@ -178,41 +178,51 @@ export default function NickCouryPortfolioHomepage() {
       accent: "var(--regal-navy)",
       focus: "Access Control • Data Protection • Compliance • Governance",
       summary:
-        "Managed and secured systems in a real estate brokerage handling sensitive financial and client data while maintaining regulatory compliance and system integrity.",
-      bullets: [
-        "Implemented access control and monitoring practices to reduce unauthorized access risk",
-        "Maintained compliance through structured processes, documentation, and accountability",
-        "Monitored system and agent activity to proactively identify and mitigate potential threats",
+        "Applied security-minded network administration and information governance practices within a regulated real estate brokerage environment responsible for protecting sensitive client, financial, contractual, and transaction-related data. The work required balancing business usability with confidentiality, integrity, availability, and regulatory accountability.",
+    bullets: [
+        "Implemented role-based access control practices to help ensure users only had access to the systems, records, and transaction data necessary for their responsibilities.",
+        "Applied defense-in-depth principles across daily operations by combining secure account practices, controlled document access, procedural safeguards, monitoring, and regulatory oversight.",
+        "Supported Zero Trust-aligned habits by treating access as conditional, verifying user need, limiting unnecessary exposure, and reinforcing accountability around sensitive client and financial information.",
+        "Maintained structured documentation, transaction records, and compliance-focused workflows to support audit readiness, data integrity, and secure information handling.",
+        "Monitored operational activity, agent workflows, and digital transaction processes to identify risks early, reduce process gaps, and strengthen overall business continuity."
       ],
-      result: "Strengthened data protection posture and improved audit readiness in a regulated environment.",
+      result:
+        "Strengthened the brokerage’s digital security posture by combining regulatory compliance, access governance, secure data handling, and layered operational controls to better protect sensitive information and improve audit readiness."
     },
     {
       title: "Infrastructure & IT Integration Across Multi-Site Projects",
       accent: "var(--seal-gold)",
       focus: "Network Deployment • Structured Cabling • Process Improvement",
       summary:
-        "Delivered 50+ projects integrating IT infrastructure into construction environments while balancing project delivery timelines with reliability, documentation, and quality control.",
+        "Led the integration of operational infrastructure, structured technology planning, and process standardization across 50+ residential and multi-site construction projects. Combined hands-on project execution with systems-thinking to improve reliability, scalability, documentation accuracy, and long-term operational efficiency throughout the full project lifecycle.",
       bullets: [
-        "Standardized deployment processes to improve consistency and efficiency",
-        "Integrated secure configurations into infrastructure design and implementation",
-        "Treated each project with an ownership mindset while still executing within scope and structure",
+        "Integrated technology and infrastructure planning directly into project execution, coordinating structured cabling, network readiness, utility systems, equipment placement, and future scalability considerations during construction phases.",
+        "Developed standardized deployment and operational workflows that improved installation consistency, reduced rework, strengthened quality control, and supported more efficient multi-project coordination.",
+        "Applied process engineering and Lean operational principles to streamline communication, scheduling, procurement, documentation, and implementation activities across contractors, vendors, engineers, and clients.",
+        "Implemented structured documentation and configuration practices to improve project traceability, accountability, maintenance readiness, and long-term infrastructure reliability.",
+        "Approached every project with an ownership-driven mindset by balancing client expectations, operational constraints, risk management, and scalable execution while maintaining alignment with timelines, scope, and regulatory requirements."
       ],
-      result: "Increased efficiency, improved reliability, and scalable infrastructure delivery.",
+      result:
+        "Enhanced project delivery outcomes by integrating technology and infrastructure planning, standardizing operational workflows, and applying process engineering principles to improve efficiency, reduce risks, and support long-term operational success."
     },
     {
-      title: "AI & Security Awareness Integration",
+      title: "AI, Governance & Security Framework Learning",
       accent: "var(--deep-crimson)",
-      focus: "AI Risk • Governance • NIST AI RMF • Cybersecurity Alignment",
+      focus: "Continuous Learning • Home Lab • Frameworks • Governance",
       summary:
-        "Actively advancing my expertise in AI security and governance through continual learning, including pursuing certification aligned to the NIST AI Risk Management Framework through Akylade.",
+        "Actively building hands-on security and governance experience through a continuously evolving home lab environment focused on secure system administration, AI governance awareness, infrastructure hardening, and compliance-aligned operational practices. Current learning initiatives emphasize applying real-world security concepts alongside modern governance frameworks used within enterprise and government-regulated environments.",
       bullets: [
-        "Studying AI risk lifecycle functions: Govern, Map, Measure, and Manage",
-        "Aligning AI practices with cybersecurity frameworks such as NIST CSF",
-        "Expanding knowledge in AI governance, risk, and compliance for future-focused security roles",
-        "Pursuing deeper certifications and technical learning to stay ahead of evolving threats",
-      ],
-      result: "Positioned to support secure AI adoption, governance, and compliance-driven environments.",
+        "Deploying and managing lab environments using CIS-hardened operating system images and security-focused configurations to better understand system baselining, attack surface reduction, and secure infrastructure practices.",
+        "Studying governance and cybersecurity frameworks including NIST CSF, NIST 800-53, ISO 27001, and the NIST AI Risk Management Framework to strengthen understanding of enterprise security controls, compliance requirements, and operational risk management.",
+        "Exploring how AI technologies intersect with cybersecurity, governance, privacy, and risk management through practical research into AI misuse prevention, secure adoption strategies, and responsible AI lifecycle management.",
+        "Applying layered security concepts such as Zero Trust principles, access control, segmentation, monitoring, logging, and defense-in-depth strategies throughout home lab architecture and operational workflows.",
+        "Continuously expanding technical knowledge across Linux administration, networking, virtualization, cloud concepts, identity security, secure remote access, and infrastructure management through hands-on implementation and iterative learning.",
+        "Actively pursuing advanced security and governance-focused certifications including CISSP, CISM, and CISA to deepen understanding of enterprise security operations, governance, audit readiness, and risk management."
+    ],
+      result:
+        "Building a strong foundation in modern cybersecurity governance, infrastructure security, and compliance-aware operations through continuous learning, practical implementation, and ongoing exposure to enterprise-aligned security frameworks and best practices."
     },
+    
   ];
 
   return (
@@ -257,7 +267,7 @@ export default function NickCouryPortfolioHomepage() {
                 {[
                   ["20+", "Years of cross-industry experience"],
                   ["50+", "Turn-key projects delivered"],
-                  ["8", "Professional certifications"],
+                  ["12", "Professional certifications"],
                   ["3", "Core focus areas"],
                 ].map(([value, label]) => (
                   <div key={label} className="rounded-2xl border border-[var(--soft-ivory-2)] bg-[var(--panel-bg-2)] p-4">
