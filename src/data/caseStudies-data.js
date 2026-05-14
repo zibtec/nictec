@@ -61,5 +61,6 @@ const caseStudiesData = [
     ],
   result:
     "Building a strong foundation in modern cybersecurity governance, infrastructure security, and compliance-aware operations through continuous learning, practical implementation, and ongoing exposure to enterprise-aligned security frameworks and best practices."
-}
+  },
+];
 export default caseStudiesData;
