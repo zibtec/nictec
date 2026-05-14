@@ -45,6 +45,10 @@ export default function CaseStudiesPage() {
             </article>
           ))}
         </div>
+
+        <footer className="mt-16 text-center text-xs tracking-wider text-[var(--seal-gold)]">
+          &copy; {new Date().getFullYear()} Nick Coury - All Rights Reserved
+        </footer>
       </main>
     </div>
   );

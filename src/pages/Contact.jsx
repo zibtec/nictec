@@ -273,15 +273,13 @@ const Contact = () => {
             </button>
           </div>
         </form>
+
+        <footer className="mt-16 text-center text-xs tracking-wider text-[var(--seal-gold)]">
+          &copy; {new Date().getFullYear()} Nick Coury - All Rights Reserved
+        </footer>
       </div>
     </section>
   );
 };
 
-            <footer className="mt-16 pb-10 text-center">
-              <div className="footer-watermark text-xs tracking-wider">
-                © {new Date().getFullYear()} Nick Coury — All Rights Reserved
-              </div>
-            </footer>
-            
 export default Contact;
