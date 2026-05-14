@@ -1,6 +1,7 @@
 import React from "react";
 import FloatingSocial from "../components/FloatingSocial";
 import caseStudiesData from "../data/caseStudies-data";
+import HomeLab from "../data/homeLab";
 
 const SectionHeading = ({ eyebrow, title, description }) => (
   <div className="mb-8 max-w-3xl">
@@ -38,13 +39,15 @@ export default function CaseStudiesPage() {
               <p className="mt-4 text-sm leading-7 text-[rgba(247,235,224,0.88)]">{study.summary}</p>
               <ul className="mt-4 space-y-2 text-sm text-[rgba(247,235,224,0.88)]">
                 {study.bullets.map((bullet) => (
-                  <li key={bullet}>â€¢ {bullet}</li>
+                  <li key={bullet}>&bull; {bullet}</li>
                 ))}
               </ul>
               <p className="mt-4 text-sm text-[var(--seal-gold)]">Result: {study.result}</p>
             </article>
           ))}
         </div>
+
+        <HomeLab />
 
         <footer className="mt-16 text-center text-xs tracking-wider text-[var(--seal-gold)]">
           &copy; {new Date().getFullYear()} Nick Coury - All Rights Reserved

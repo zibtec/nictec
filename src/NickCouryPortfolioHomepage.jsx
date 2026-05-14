@@ -202,7 +202,7 @@ export default function NickCouryPortfolioHomepage() {
                   ["20+", "Years of cross-industry experience"],
                   ["50+", "Turn-key projects delivered"],
                   ["12", "Professional certifications"],
-                  ["3", "Core focus areas"],
+                  ["3", "Core experience areas"],
                 ].map(([value, label]) => (
                   <div key={label} className="rounded-2xl border border-[var(--soft-ivory-2)] bg-[var(--panel-bg-2)] p-4">
                     <div className="font-display text-3xl font-bold text-[var(--ethereal-ivory)]">{value}</div>
