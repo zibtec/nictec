@@ -278,4 +278,10 @@ const Contact = () => {
   );
 };
 
+            <footer className="mt-16 pb-10 text-center">
+              <div className="footer-watermark text-xs tracking-wider">
+                © {new Date().getFullYear()} Nick Coury — All Rights Reserved
+              </div>
+            </footer>
+            
 export default Contact;
