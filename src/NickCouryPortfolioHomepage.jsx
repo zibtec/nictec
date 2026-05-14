@@ -158,72 +158,6 @@ export default function NickCouryPortfolioHomepage() {
     },
   ];
 
-  const caseStudies = [
-    {
-      title: "High-Volume IT Operations Stabilization",
-      accent: "var(--deep-crimson)",
-      focus: "Endpoint Security • MFA • Incident Response • Operational Continuity",
-      summary:
-        "In a high-volume AWS-integrated environment, I supported frontline IT operations by troubleshooting network connectivity, MFA failures, and endpoint access issues affecting daily workflows.",
-      bullets: [
-        "Reduced recurring access issues through root-cause identification and repeatable fixes",
-        "Reinforced endpoint security and access control practices aligned with least-privilege principles",
-        "Resolved and documented trouble tickets to support faster resolution cycles, eliminating escalations and improving associate experience",
-      ],
-      result:
-        "Improved uptime, reduced user friction, strengthened secure operational practices, and reduced critical pull time misses below 5%.",
-    },
-    {
-      title: "Network & Data Security in a Regulated Business Environment",
-      accent: "var(--regal-navy)",
-      focus: "Access Control • Data Protection • Compliance • Governance",
-      summary:
-        "Applied security-minded network administration and information governance practices within a regulated real estate brokerage environment responsible for protecting sensitive client, financial, contractual, and transaction-related data. The work required balancing business usability with confidentiality, integrity, availability, and regulatory accountability.",
-    bullets: [
-        "Implemented role-based access control practices to help ensure users only had access to the systems, records, and transaction data necessary for their responsibilities.",
-        "Applied defense-in-depth principles across daily operations by combining secure account practices, controlled document access, procedural safeguards, monitoring, and regulatory oversight.",
-        "Supported Zero Trust-aligned habits by treating access as conditional, verifying user need, limiting unnecessary exposure, and reinforcing accountability around sensitive client and financial information.",
-        "Maintained structured documentation, transaction records, and compliance-focused workflows to support audit readiness, data integrity, and secure information handling.",
-        "Monitored operational activity, agent workflows, and digital transaction processes to identify risks early, reduce process gaps, and strengthen overall business continuity."
-      ],
-      result:
-        "Strengthened the brokerage’s digital security posture by combining regulatory compliance, access governance, secure data handling, and layered operational controls to better protect sensitive information and improve audit readiness."
-    },
-    {
-      title: "Infrastructure & IT Integration Across Multi-Site Projects",
-      accent: "var(--seal-gold)",
-      focus: "Network Deployment • Structured Cabling • Process Improvement",
-      summary:
-        "Led the integration of operational infrastructure, structured technology planning, and process standardization across 50+ residential and multi-site construction projects. Combined hands-on project execution with systems-thinking to improve reliability, scalability, documentation accuracy, and long-term operational efficiency throughout the full project lifecycle.",
-      bullets: [
-        "Integrated technology and infrastructure planning directly into project execution, coordinating structured cabling, network readiness, utility systems, equipment placement, and future scalability considerations during construction phases.",
-        "Developed standardized deployment and operational workflows that improved installation consistency, reduced rework, strengthened quality control, and supported more efficient multi-project coordination.",
-        "Applied process engineering and Lean operational principles to streamline communication, scheduling, procurement, documentation, and implementation activities across contractors, vendors, engineers, and clients.",
-        "Implemented structured documentation and configuration practices to improve project traceability, accountability, maintenance readiness, and long-term infrastructure reliability.",
-        "Approached every project with an ownership-driven mindset by balancing client expectations, operational constraints, risk management, and scalable execution while maintaining alignment with timelines, scope, and regulatory requirements."
-      ],
-      result:
-        "Enhanced project delivery outcomes by integrating technology and infrastructure planning, standardizing operational workflows, and applying process engineering principles to improve efficiency, reduce risks, and support long-term operational success."
-    },
-    {
-      title: "AI, Governance & Security Framework Learning",
-      accent: "var(--deep-crimson)",
-      focus: "Continuous Learning • Home Lab • Frameworks • Governance",
-      summary:
-        "Actively building hands-on security and governance experience through a continuously evolving home lab environment focused on secure system administration, AI governance awareness, infrastructure hardening, and compliance-aligned operational practices. Current learning initiatives emphasize applying real-world security concepts alongside modern governance frameworks used within enterprise and government-regulated environments.",
-      bullets: [
-        "Deploying and managing lab environments using CIS-hardened operating system images and security-focused configurations to better understand system baselining, attack surface reduction, and secure infrastructure practices.",
-        "Studying governance and cybersecurity frameworks including NIST CSF, NIST 800-53, ISO 27001, and the NIST AI Risk Management Framework to strengthen understanding of enterprise security controls, compliance requirements, and operational risk management.",
-        "Exploring how AI technologies intersect with cybersecurity, governance, privacy, and risk management through practical research into AI misuse prevention, secure adoption strategies, and responsible AI lifecycle management.",
-        "Applying layered security concepts such as Zero Trust principles, access control, segmentation, monitoring, logging, and defense-in-depth strategies throughout home lab architecture and operational workflows.",
-        "Continuously expanding technical knowledge across Linux administration, networking, virtualization, cloud concepts, identity security, secure remote access, and infrastructure management through hands-on implementation and iterative learning.",
-        "Actively pursuing advanced security and governance-focused certifications including CISSP, CISM, and CISA to deepen understanding of enterprise security operations, governance, audit readiness, and risk management."
-    ],
-      result:
-        "Building a strong foundation in modern cybersecurity governance, infrastructure security, and compliance-aware operations through continuous learning, practical implementation, and ongoing exposure to enterprise-aligned security frameworks and best practices."
-    },
-    
-  ];
 
   return (
     <div className="min-h-screen text-[var(--ethereal-ivory)]">
@@ -397,28 +331,6 @@ export default function NickCouryPortfolioHomepage() {
             </div>
           </section>
 
-          <section id="case-studies" className="mt-20">
-            <SectionHeading
-              eyebrow="Case Studies"
-              title="Real work. Real impact. Relentless execution."
-              description="I approach every role, whether help desk, infrastructure, systems support, or administration, with the same mindset: solve the problem, secure the system, improve the process, and follow through."
-            />
-            <div className="space-y-6">
-              {caseStudies.map((study) => (
-                <div key={study.title} className="glass rounded-[26px] border-l-4 p-6 md:p-7" style={{ borderLeftColor: study.accent }}>
-                  <h3 className="font-display text-xl font-semibold text-[var(--ethereal-ivory)]">{study.title}</h3>
-                  <p className="mt-3 text-sm text-[var(--muted-ivory)]">Focus: {study.focus}</p>
-                  <p className="mt-4 text-sm leading-7 text-[rgba(247,235,224,0.88)]">{study.summary}</p>
-                  <ul className="mt-4 space-y-2 text-sm text-[rgba(247,235,224,0.88)]">
-                    {study.bullets.map((bullet) => (
-                      <li key={bullet}>• {bullet}</li>
-                    ))}
-                  </ul>
-                  <p className="mt-4 text-sm text-[var(--seal-gold)]">Result: {study.result}</p>
-                </div>
-              ))}
-            </div>
-          </section>
 
           <footer className="mt-16 pb-10 text-center">
             <div className="footer-watermark text-xs tracking-wider">

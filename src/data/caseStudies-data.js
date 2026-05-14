@@ -2,16 +2,18 @@ const caseStudiesData = [
   {
     title: "High-Volume IT Operations Stabilization",
     accent: "var(--deep-crimson)",
-    focus: "Endpoint Security • MFA • Incident Response • Operational Continuity",
+    focus: "Operational Stability • IT Optimization • Incident Resolution • Workflow Continuity",
     summary:
-      "In a high-volume AWS-integrated environment, I supported frontline IT operations by troubleshooting network connectivity, MFA failures, and endpoint access issues affecting daily workflows.",
+      "Supported operational stabilization and IT workflow optimization within a high-volume, AWS-integrated fulfillment environment where system reliability, rapid issue resolution, and operational continuity directly impacted large-scale daily production metrics. Worked within fast-paced operational teams to identify bottlenecks, troubleshoot recurring technical disruptions, and improve frontline technology reliability across critical warehouse workflows.",
     bullets: [
-      "Reduced recurring access issues through root-cause identification and repeatable fixes",
-      "Reinforced endpoint security and access control practices aligned with least-privilege principles",
-      "Resolved and documented trouble tickets to support faster resolution cycles, eliminating escalations and improving associate experience",
+      "Troubleshot and resolved recurring connectivity, endpoint, authentication, MFA, and workflow-impacting technical issues affecting large-scale operational throughput and associate productivity.",
+      "Contributed to operational stabilization efforts by identifying root causes behind recurring technical failures and implementing repeatable troubleshooting and process improvement practices to reduce repeat incidents.",
+      "Supported high-availability operational environments by rapidly resolving trouble tickets, minimizing downtime, and maintaining continuity across systems supporting fulfillment, logistics, and workforce operations.",
+      "Improved escalation efficiency and operational response times through detailed issue documentation, standardized troubleshooting approaches, and cross-functional communication between operations and support teams.",
+      "Reinforced secure operational practices through controlled access procedures, endpoint accountability, authentication validation, and support for security-focused workflow standards within distributed operational environments."
     ],
-    result:
-      "Improved uptime, reduced user friction, strengthened secure operational practices, and reduced critical pull time misses below 5%.",
+  result:
+      "Improved operational uptime, reduced workflow disruption, strengthened frontline IT support efficiency, and contributed to more stable, scalable, and reliable fulfillment operations within a high-demand production environment."
   },
   {
     title: "Network & Data Security in a Regulated Business Environment",

@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import NickCouryPortfolioHomepage from './NickCouryPortfolioHomepage';
 import About from "./pages/About";
 import ExperiencePage from "./pages/Experience";
-import InitiativesPage from "./pages/Initiatives";
+import CaseStudiesPage from "./pages/CaseStudies";
 import Credentials from "./pages/Credentials";
 import Contact from "./pages/Contact";
 
@@ -72,7 +72,7 @@ function App() {
         <Route path="/" element={<NickCouryPortfolioHomepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/experience" element={<ExperiencePage />} />
-        <Route path="/initiatives" element={<InitiativesPage />} />
+        <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/credentials" element={<Credentials />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
