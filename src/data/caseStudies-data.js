@@ -18,41 +18,48 @@ const caseStudiesData = [
     accent: "var(--regal-navy)",
     focus: "Access Control • Data Protection • Compliance • Governance",
     summary:
-      "Managed and secured systems in a real estate brokerage handling sensitive financial and client data while maintaining regulatory compliance and system integrity.",
+    "Applied security-minded network administration and information governance practices within a regulated real estate brokerage environment responsible for protecting sensitive client, financial, contractual, and transaction-related data. The work required balancing business usability with confidentiality, integrity, availability, and regulatory accountability.",
     bullets: [
-      "Implemented access control and monitoring practices to reduce unauthorized access risk",
-      "Maintained compliance through structured processes, documentation, and accountability",
-      "Monitored system and agent activity to proactively identify and mitigate potential threats",
+      "Implemented role-based access control practices to help ensure users only had access to the systems, records, and transaction data necessary for their responsibilities.",
+      "Applied defense-in-depth principles across daily operations by combining secure account practices, controlled document access, procedural safeguards, monitoring, and regulatory oversight.",
+      "Supported Zero Trust-aligned habits by treating access as conditional, verifying user need, limiting unnecessary exposure, and reinforcing accountability around sensitive client and financial information.",
+      "Maintained structured documentation, transaction records, and compliance-focused workflows to support audit readiness, data integrity, and secure information handling.",
+      "Monitored operational activity, agent workflows, and digital transaction processes to identify risks early, reduce process gaps, and strengthen overall business continuity."
     ],
-    result: "Strengthened data protection posture and improved audit readiness in a regulated environment.",
+  result:
+    "Strengthened the brokerage’s digital security posture by combining regulatory compliance, access governance, secure data handling, and layered operational controls to better protect sensitive information and improve audit readiness."
   },
   {
     title: "Infrastructure & IT Integration Across Multi-Site Projects",
     accent: "var(--seal-gold)",
     focus: "Network Deployment • Structured Cabling • Process Improvement",
     summary:
-      "Delivered 50+ projects integrating IT infrastructure into construction environments while balancing project delivery timelines with reliability, documentation, and quality control.",
+    "Led the integration of operational infrastructure, structured technology planning, and process standardization across 50+ residential and multi-site construction projects. Combined hands-on project execution with systems-thinking to improve reliability, scalability, documentation accuracy, and long-term operational efficiency throughout the full project lifecycle.",
     bullets: [
-      "Standardized deployment processes to improve consistency and efficiency",
-      "Integrated secure configurations into infrastructure design and implementation",
-      "Treated each project with an ownership mindset while still executing within scope and structure",
+      "Integrated technology and infrastructure planning directly into project execution, coordinating structured cabling, network readiness, utility systems, equipment placement, and future scalability considerations during construction phases.",
+      "Developed standardized deployment and operational workflows that improved installation consistency, reduced rework, strengthened quality control, and supported more efficient multi-project coordination.",
+      "Applied process engineering and Lean operational principles to streamline communication, scheduling, procurement, documentation, and implementation activities across contractors, vendors, engineers, and clients.",
+      "Implemented structured documentation and configuration practices to improve project traceability, accountability, maintenance readiness, and long-term infrastructure reliability.",
+      "Approached every project with an ownership-driven mindset by balancing client expectations, operational constraints, risk management, and scalable execution while maintaining alignment with timelines, scope, and regulatory requirements."
     ],
-    result: "Increased efficiency, improved reliability, and scalable infrastructure delivery.",
-  },
+  result:
+    "Improved infrastructure reliability, operational consistency, and long-term maintainability by combining standardized processes, integrated planning, and scalable deployment practices across complex multi-site environments."
+  },  
   {
-    title: "AI & Security Awareness Integration",
+    title: "AI, Governance & Security Framework Learning",
     accent: "var(--deep-crimson)",
-    focus: "AI Risk • Governance • NIST AI RMF • Cybersecurity Alignment",
+    focus: "Continuous Learning • Home Lab • Frameworks • Governance",
     summary:
-      "Actively advancing my expertise in AI security and governance through continual learning, including pursuing certification aligned to the NIST AI Risk Management Framework through Akylade.",
+      "Actively building hands-on security and governance experience through a continuously evolving home lab environment focused on secure system administration, AI governance awareness, infrastructure hardening, and compliance-aligned operational practices. Current learning initiatives emphasize applying real-world security concepts alongside modern governance frameworks used within enterprise and government-regulated environments.",
     bullets: [
-      "Studying AI risk lifecycle functions: Govern, Map, Measure, and Manage",
-      "Aligning AI practices with cybersecurity frameworks such as NIST CSF",
-      "Expanding knowledge in AI governance, risk, and compliance for future-focused security roles",
-      "Pursuing deeper certifications and technical learning to stay ahead of evolving threats",
+      "Deploying and managing lab environments using CIS-hardened operating system images and security-focused configurations to better understand system baselining, attack surface reduction, and secure infrastructure practices.",
+      "Studying governance and cybersecurity frameworks including NIST CSF, NIST 800-53, ISO 27001, and the NIST AI Risk Management Framework to strengthen understanding of enterprise security controls, compliance requirements, and operational risk management.",
+      "Exploring how AI technologies intersect with cybersecurity, governance, privacy, and risk management through practical research into AI misuse prevention, secure adoption strategies, and responsible AI lifecycle management.",
+      "Applying layered security concepts such as Zero Trust principles, access control, segmentation, monitoring, logging, and defense-in-depth strategies throughout home lab architecture and operational workflows.",
+      "Continuously expanding technical knowledge across Linux administration, networking, virtualization, cloud concepts, identity security, secure remote access, and infrastructure management through hands-on implementation and iterative learning.",
+      "Actively pursuing advanced security and governance-focused certifications including CISSP, CISM, and CISA to deepen understanding of enterprise security operations, governance, audit readiness, and risk management."
     ],
-    result: "Positioned to support secure AI adoption, governance, and compliance-driven environments.",
-  },
-];
-
+  result:
+    "Building a strong foundation in modern cybersecurity governance, infrastructure security, and compliance-aware operations through continuous learning, practical implementation, and ongoing exposure to enterprise-aligned security frameworks and best practices."
+}
 export default caseStudiesData;
