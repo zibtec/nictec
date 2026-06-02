@@ -58,16 +58,6 @@ const getAllowedHostnames = (env) =>
     .map((hostname) => hostname.trim().toLowerCase())
     .filter(Boolean);
 
-const buildContactMailto = ({ firstName, lastName, company, email, message }) => {
-  const fullName = `${firstName} ${lastName}`;
-  const subject = encodeURIComponent(`Website Contact from ${fullName}`);
-  const body = encodeURIComponent(
-    `First Name: ${firstName}\nLast Name: ${lastName}\nCompany: ${company}\nEmail: ${email}\n\n${message}`
-  );
-
-  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-};
-
 const buildContactEmail = ({ firstName, lastName, company, email, message }) => {
   const fullName = `${firstName} ${lastName}`;
   const subject = `Website Contact from ${fullName}`;
@@ -94,7 +84,7 @@ const sendContactEmail = async ({ payload, env }) => {
   const to = cleanText(env.CONTACT_TO_EMAIL || CONTACT_EMAIL);
 
   if (!apiKey || !from) {
-    return { configured: false };
+    return { configured: false, sent: false };
   }
 
   const email = buildContactEmail(payload);
@@ -223,7 +213,6 @@ export async function onRequestPost(context) {
     return json({ ok: false, message: "Security verification failed." }, 400);
   }
 
-  const mailtoUrl = buildContactMailto(payload);
   let emailDelivery;
 
   try {
@@ -233,18 +222,26 @@ export async function onRequestPost(context) {
       {
         ok: false,
         message: "Your request was verified, but email delivery is unavailable. Please try again later.",
-        mailtoUrl,
       },
       502
     );
   }
 
-  if (emailDelivery.configured && !emailDelivery.sent) {
+  if (!emailDelivery.configured) {
+    return json(
+      {
+        ok: false,
+        message: "Server email delivery is not configured. Add RESEND_API_KEY and CONTACT_FROM_EMAIL in Cloudflare Pages.",
+      },
+      500
+    );
+  }
+
+  if (!emailDelivery.sent) {
     return json(
       {
         ok: false,
         message: "Your request was verified, but email delivery failed. Please try again later.",
-        mailtoUrl,
       },
       502
     );
@@ -252,9 +249,8 @@ export async function onRequestPost(context) {
 
   return json({
     ok: true,
-    sent: Boolean(emailDelivery.sent),
+    sent: true,
     emailId: emailDelivery.id,
-    mailtoUrl,
     contact: {
       firstName: payload.firstName,
       lastName: payload.lastName,

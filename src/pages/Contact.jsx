@@ -10,6 +10,7 @@ const turnstileScriptSrc = "https://challenges.cloudflare.com/turnstile/v0/api.j
 const Contact = () => {
   const [status, setStatus] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isTurnstileVerified, setIsTurnstileVerified] = React.useState(false);
   const turnstileRef = React.useRef(null);
   const turnstileWidgetIdRef = React.useRef(null);
 
@@ -53,12 +54,15 @@ const Contact = () => {
           action: "contact",
           theme: "dark",
           callback: () => {
-            setStatus("");
+            setIsTurnstileVerified(true);
+            setStatus("Security verification complete.");
           },
           "expired-callback": () => {
+            setIsTurnstileVerified(false);
             setStatus("Security verification expired. Please verify again.");
           },
           "error-callback": () => {
+            setIsTurnstileVerified(false);
             setStatus("Security verification failed to load. Refresh and try again.");
           },
         });
@@ -94,6 +98,8 @@ const Contact = () => {
   }, []);
 
   const resetTurnstile = () => {
+    setIsTurnstileVerified(false);
+
     if (window.turnstile && turnstileWidgetIdRef.current) {
       window.turnstile.reset(turnstileWidgetIdRef.current);
     }
@@ -159,15 +165,9 @@ const Contact = () => {
                 throw new Error(result.message || "Unable to verify this submission.");
               }
 
-              if (result.sent) {
-                setStatus("Thanks, your message has been sent.");
-                form.reset();
-                resetTurnstile();
-                return;
-              }
-
-              setStatus("Verification passed. Opening your email client...");
-              window.location.href = result.mailtoUrl;
+              setStatus("Thanks, your message has been sent.");
+              form.reset();
+              resetTurnstile();
             } catch (error) {
               setStatus(error.message);
               resetTurnstile();
@@ -266,7 +266,7 @@ const Contact = () => {
           <div className="mt-6 text-right">
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={isSubmitting || !turnstileSiteKey || !isTurnstileVerified}
               className="rounded-2xl bg-[var(--deep-crimson)] px-6 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] shadow-[0_12px_28px_rgba(158,14,24,0.18)] transition duration-200 hover:bg-[var(--seal-gold)] hover:text-[var(--velvet-obsidian)] hover:shadow-[0_16px_34px_rgba(194,145,44,0.22)] active:bg-[var(--velvet-obsidian)] active:text-[var(--ethereal-ivory)] active:shadow-[0_10px_22px_rgba(23,23,33,0.45)] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isSubmitting ? "Verifying..." : "Send"}
