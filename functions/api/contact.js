@@ -14,6 +14,20 @@ const json = (body, status = 200) =>
   });
 
 const cleanText = (value) => (typeof value === "string" ? value.trim() : "");
+const getIdempotencyKey = () => {
+  if (globalThis.crypto?.randomUUID) {
+    return globalThis.crypto.randomUUID();
+  }
+
+  if (globalThis.crypto?.getRandomValues) {
+    const bytes = new Uint8Array(16);
+    globalThis.crypto.getRandomValues(bytes);
+    return Array.from(bytes, (byte) => byte.toString(16).padStart(2, "0")).join("");
+  }
+
+  return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+};
+
 const escapeHtml = (value) =>
   cleanText(value)
     .replace(/&/g, "&amp;")
@@ -93,7 +107,7 @@ const sendContactEmail = async ({ payload, env }) => {
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
-      "Idempotency-Key": crypto.randomUUID(),
+      "Idempotency-Key": getIdempotencyKey(),
     },
     body: JSON.stringify({
       from,
@@ -106,7 +120,13 @@ const sendContactEmail = async ({ payload, env }) => {
   });
 
   if (!response.ok) {
-    return { configured: true, sent: false };
+    const errorText = await response.text().catch(() => "");
+    return {
+      configured: true,
+      sent: false,
+      status: response.status,
+      error: errorText.slice(0, 500),
+    };
   }
 
   const result = await response.json();
@@ -140,7 +160,7 @@ const verifyTurnstile = async ({ token, request, env }) => {
   return response.json();
 };
 
-export async function onRequestPost(context) {
+const handlePost = async (context) => {
   const { request, env } = context;
 
   let body;
@@ -241,7 +261,9 @@ export async function onRequestPost(context) {
     return json(
       {
         ok: false,
-        message: "Your request was verified, but email delivery failed. Please try again later.",
+        message: "Your request was verified, but email delivery failed. Check the Resend sender/domain and API key configuration.",
+        providerStatus: emailDelivery.status,
+        providerError: emailDelivery.error,
       },
       502
     );
@@ -259,4 +281,27 @@ export async function onRequestPost(context) {
       message: payload.message,
     },
   });
+};
+
+export async function onRequestGet() {
+  return json({ ok: false, message: "Contact API is available. Submit the contact form with POST." }, 405);
+}
+
+export async function onRequestOptions() {
+  return new Response(null, { status: 204 });
+}
+
+export async function onRequestPost(context) {
+  try {
+    return await handlePost(context);
+  } catch (error) {
+    return json(
+      {
+        ok: false,
+        message: "Contact API failed before it could complete the request.",
+        error: error instanceof Error ? error.message : "Unknown runtime error",
+      },
+      500
+    );
+  }
 }
