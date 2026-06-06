@@ -14,6 +14,9 @@ const SectionHeading = ({ eyebrow, title, description }) => (
 );
 
 export default function NickCouryPortfolioHomepage() {
+  const frameworkLinkClass =
+    "font-semibold text-[var(--seal-gold)] underline decoration-[rgba(194,145,44,0.55)] underline-offset-4 transition hover:text-[var(--ethereal-ivory)] hover:decoration-[var(--seal-gold)] focus:outline-none focus:ring-2 focus:ring-[var(--seal-gold)] focus:ring-offset-2 focus:ring-offset-[var(--regal-navy)]";
+
   const strengths = [
     {
       title: "Project Delivery & Operational Leadership",
@@ -27,8 +30,72 @@ export default function NickCouryPortfolioHomepage() {
     },
     {
       title: "Governance, Risk & Compliance Awareness",
+      description: (
+        <>
+          Working in regulated and compliance-driven environments with attention to risk mitigation, change control,
+          operational documentation, professional standards, and security frameworks including{" "}
+          <a
+            href="https://www.nist.gov/cyberframework"
+            target="_blank"
+            rel="noreferrer"
+            className={frameworkLinkClass}
+          >
+            NIST CSF
+          </a>
+          ,{" "}
+          <a
+            href="https://csrc.nist.gov/projects/risk-management/about-rmf"
+            target="_blank"
+            rel="noreferrer"
+            className={frameworkLinkClass}
+          >
+            NIST RMF
+          </a>
+          ,{" "}
+          <a
+            href="https://www.cisecurity.org/controls"
+            target="_blank"
+            rel="noreferrer"
+            className={frameworkLinkClass}
+          >
+            CIS Controls
+          </a>
+          ,{" "}
+          <a
+            href="https://csrc.nist.gov/pubs/sp/800/171/r3/final"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="CMMC-related NIST SP 800-171 publication (opens in a new tab)"
+            className={frameworkLinkClass}
+          >
+            CMMC
+          </a>
+          ,{" "}
+          <a
+            href="https://www.nist.gov/itl/ai-risk-management-framework"
+            target="_blank"
+            rel="noreferrer"
+            className={frameworkLinkClass}
+          >
+            NIST AI RMF
+          </a>
+          ,{" "}
+          <a
+            href="https://www.fema.gov/emergency-managers/nims"
+            target="_blank"
+            rel="noreferrer"
+            className={frameworkLinkClass}
+          >
+            NIMS
+          </a>
+          , FAA operational awareness, and Arizona real estate regulatory requirements.
+        </>
+      ),
+    },
+    {
+      title: "Aviation Discipline & Operational Readiness",
       description:
-        "Working in regulated and compliance-driven environments with attention to risk mitigation, change control, operational documentation, professional standards, and security frameworks including NIST CSF, NIST RMF, CIS Controls, CMMC, NIST AI RMF, NIMS, FAA operational awareness, and Arizona real estate regulatory requirements.",
+        "Applying private-pilot training, crew resource management (CRM), single-pilot resource management, checklist discipline, and continuous situational awareness to complex work. I prepare for normal operations, anticipate changing conditions, use every available resource, and remain ready to respond calmly when risk or emergencies emerge.",
     },
   ];
 
@@ -44,7 +111,86 @@ export default function NickCouryPortfolioHomepage() {
     "Compliance-driven process improvement",
     "Root-cause analysis and issue resolution",
     "NIMS and FAA operational awareness",
+    "CRM, checklists, and situational awareness",
     "Executive communication and mentorship",
+  ];
+
+  const leadershipPrinciples = [
+    {
+      number: "01",
+      title: "Lead Through Service",
+      text:
+        "Set priorities, remove obstacles, and connect daily work to the people and mission it supports. Leadership stays engaged, approachable, and useful.",
+    },
+    {
+      number: "02",
+      title: "Make Accountability Productive",
+      text:
+        "Set clear expectations and address gaps directly, then determine whether the cause is training, communication, documentation, workload, or system design.",
+    },
+    {
+      number: "03",
+      title: "Develop Capability",
+      text:
+        "Build confidence through cross-training, knowledge sharing, certification goals, practical coaching, and room to ask questions before issues become failures.",
+    },
+    {
+      number: "04",
+      title: "Earn Trust Through Follow-Through",
+      text:
+        "Listen first, communicate without unnecessary jargon, document accurately, close the loop, and hold myself to the same standards I ask of the team.",
+    },
+  ];
+
+  const leadershipCulture = [
+    "Clear priorities and the why behind the work",
+    "Timely feedback without micromanagement",
+    "Respectful ownership of mistakes and concerns",
+    "Repeatable procedures and after-action learning",
+    "Professional growth tied to operational needs",
+    "Calm, dependable service across departments",
+  ];
+
+  const aviationPractices = [
+    {
+      label: "01 / Aviate",
+      title: "Protect the Critical System First",
+      aviation:
+        "Fly the aircraft. Establish a safe glide path, level the wings, manage airspeed, and maintain control before allowing secondary tasks to compete for attention.",
+      text:
+        "In IT and cybersecurity, stabilize essential services and protect people, data, and infrastructure first. During an incident, that means containing the threat, isolating affected systems, preserving evidence, and preventing further damage before chasing every alert.",
+    },
+    {
+      label: "02 / Navigate",
+      title: "Establish Position, Direction & Options",
+      aviation:
+        "Determine where the aircraft is, where it can safely go, and which landing option best fits the remaining altitude, terrain, weather, and aircraft condition.",
+      text:
+        "Build the operational picture: identify scope, affected assets, attack path, dependencies, business impact, and the safest route forward. Use frameworks, telemetry, runbooks, and risk-based decisions to move from uncertainty toward containment and recovery.",
+    },
+    {
+      label: "03 / Communicate",
+      title: "Coordinate Clear, Actionable Intent",
+      aviation:
+        "Tell air traffic control what happened, what assistance is needed, and what the pilot intends to do, such as reporting an engine loss and the selected landing area.",
+      text:
+        "Give technical teams, leaders, users, vendors, and stakeholders concise updates: what is known, what is being protected, who owns each action, what decisions are needed, and how services will return safely to business operations.",
+    },
+  ];
+
+  const cyberOperatingModes = [
+    {
+      label: "Normal Operations",
+      title: "Build security into the flight plan",
+      text:
+        "Through DevSecOps, security becomes part of planning, development, testing, deployment, monitoring, and continuous improvement. The same priority model keeps teams focused on reliable operations, clear direction, rapid feedback, and shared ownership before an emergency develops.",
+    },
+    {
+      label: "Emergency Operations",
+      title: "Control, contain, recover",
+      text:
+        "When an attack occurs, protect critical operations, contain and isolate the threat, determine scope and recovery priorities, communicate decisions, eradicate the cause, validate restored systems, and return the organization to dependable business operations.",
+    },
   ];
 
   const journey = [
@@ -170,7 +316,7 @@ export default function NickCouryPortfolioHomepage() {
 
           <section id="focus" className="mt-20">
             <SectionHeading eyebrow="What I Bring" title="Leadership that connects physical projects, technology, security, and operations" />
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2">
               {strengths.map((item) => (
                 <div key={item.title} className="glass rounded-[26px] border-l-4 border-l-[var(--regal-navy)] p-6">
                   <h3 className="font-display text-xl font-semibold text-[var(--ethereal-ivory)]">{item.title}</h3>
@@ -186,6 +332,122 @@ export default function NickCouryPortfolioHomepage() {
                     {item}
                   </span>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="leadership" className="mt-20">
+            <SectionHeading
+              eyebrow="Leadership Culture"
+              title="Build capable people, dependable systems, and trust that holds under pressure"
+              description="My leadership philosophy is grounded in service, accountability, clear communication, and professional development. The goal is not simply to assign work. It is to create the conditions in which people understand the mission, perform with confidence, raise concerns early, and improve the system together."
+            />
+
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(20rem,0.65fr)]">
+              <div className="grid gap-4 sm:grid-cols-2">
+                {leadershipPrinciples.map((principle) => (
+                  <article
+                    key={principle.number}
+                    className="glass group rounded-[26px] border border-[var(--soft-ivory-2)] p-6 transition duration-300 hover:-translate-y-1 hover:border-[rgba(194,145,44,0.5)]"
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className="font-display text-3xl font-bold text-[rgba(194,145,44,0.45)] transition group-hover:text-[var(--seal-gold)]">
+                        {principle.number}
+                      </span>
+                      <div className="h-px flex-1 bg-gradient-to-r from-[rgba(194,145,44,0.55)] to-transparent" />
+                    </div>
+                    <h3 className="font-display mt-5 text-xl font-semibold text-[var(--ethereal-ivory)]">{principle.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-[rgba(247,235,224,0.84)]">{principle.text}</p>
+                  </article>
+                ))}
+              </div>
+
+              <aside className="glass rounded-[30px] border-t-4 border-t-[var(--deep-crimson)] p-7 md:p-8">
+                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">The Culture I Build</div>
+                <h3 className="font-display mt-3 text-2xl font-bold text-[var(--ethereal-ivory)]">Clear. Curious. Accountable.</h3>
+                <p className="mt-4 text-sm leading-7 text-[rgba(247,235,224,0.82)]">
+                  Strong teams can ask questions, own mistakes, share ideas, and rely on leadership to be consistent. That trust turns individual expertise into operational resilience.
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {leadershipCulture.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm leading-6 text-[var(--muted-ivory)]">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--seal-gold)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            </div>
+          </section>
+
+          <section id="aviation" className="mt-20">
+            <div className="glass overflow-hidden rounded-[32px] border border-[rgba(194,145,44,0.22)]">
+              <div className="relative border-b border-[var(--soft-ivory-2)] bg-[linear-gradient(145deg,rgba(10,29,72,0.9),rgba(23,23,33,0.94))] p-8 md:p-10">
+                <div className="absolute right-8 top-5 hidden font-display text-7xl font-bold tracking-[0.08em] text-[rgba(194,145,44,0.07)] md:block">
+                  A / N / C
+                </div>
+                <div className="relative max-w-4xl">
+                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">How I Operate</div>
+                  <h2 className="font-display mt-3 text-3xl font-bold text-[var(--ethereal-ivory)] md:text-4xl">
+                    Aviate. Navigate. Communicate.
+                  </h2>
+                  <p className="mt-5 text-sm leading-7 text-[rgba(247,235,224,0.86)] md:text-base">
+                    In aviation, priorities protect decision quality: fly the aircraft first, determine where you are and where you can safely go, then communicate your situation and intentions. I bring that same disciplined order of operations to technology leadership,{" "}
+                    <a
+                      href="https://www.nccoe.nist.gov/devsecops"
+                      target="_blank"
+                      rel="noreferrer"
+                      className={frameworkLinkClass}
+                    >
+                      DevSecOps
+                    </a>
+                    , cybersecurity, and business continuity. It is valuable every day and indispensable when conditions deteriorate.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid gap-px bg-[var(--soft-ivory-2)] lg:grid-cols-3">
+                {aviationPractices.map((practice) => (
+                  <article key={practice.label} className="bg-[rgba(10,17,38,0.9)] p-7 md:p-8">
+                    <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">{practice.label}</div>
+                    <h3 className="font-display mt-3 text-xl font-semibold text-[var(--ethereal-ivory)]">{practice.title}</h3>
+                    <p className="mt-4 border-l-2 border-[rgba(194,145,44,0.42)] pl-4 text-sm italic leading-6 text-[var(--muted-ivory)]">
+                      {practice.aviation}
+                    </p>
+                    <p className="mt-4 text-sm leading-7 text-[rgba(247,235,224,0.84)]">{practice.text}</p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="grid border-t border-[var(--soft-ivory-2)] lg:grid-cols-2">
+                {cyberOperatingModes.map((mode, index) => (
+                  <article
+                    key={mode.label}
+                    className={`p-7 md:p-9 ${index === 0 ? "border-b border-[var(--soft-ivory-2)] lg:border-b-0 lg:border-r" : ""}`}
+                  >
+                    <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">{mode.label}</div>
+                    <h3 className="font-display mt-3 text-2xl font-semibold text-[var(--ethereal-ivory)]">{mode.title}</h3>
+                    <p className="mt-4 text-sm leading-7 text-[rgba(247,235,224,0.84)]">{mode.text}</p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="border-t border-[rgba(194,145,44,0.26)] bg-[linear-gradient(90deg,rgba(158,14,24,0.2),rgba(194,145,44,0.1),rgba(10,29,72,0.28))] p-8 md:p-10">
+                <div className="grid items-center gap-6 lg:grid-cols-[minmax(0,1fr)_auto]">
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--seal-gold)]">My Leadership Commitment</div>
+                    <h3 className="font-display mt-3 text-2xl font-bold text-[var(--ethereal-ivory)] md:text-3xl">
+                      I build trust today while preparing people and systems for what comes next.
+                    </h3>
+                    <p className="mt-4 max-w-4xl text-sm leading-7 text-[rgba(247,235,224,0.86)] md:text-base">
+                      I lead with curiosity, service, and clear expectations. I listen before deciding, help people understand why their work matters, and create room for questions, ownership, and professional growth. My focus is not only solving the issue in front of us, but strengthening the team, improving the process, and building resilient operations that can adapt to new technology, emerging risks, and changing organizational needs.
+                    </p>
+                  </div>
+                  <div className="rounded-[22px] border border-[rgba(194,145,44,0.38)] bg-[rgba(10,17,38,0.55)] px-6 py-5 text-center">
+                    <div className="font-display text-xl font-bold text-[var(--seal-gold)]">People. Purpose. Progress.</div>
+                    <div className="mt-1 text-xs uppercase tracking-[0.16em] text-[var(--muted-ivory)]">A culture prepared for what is next</div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
