@@ -41,9 +41,9 @@ const timeline = [
 const components = [
   {
     id: "motherboard",
-    name: "ASRock B860M Non-Wi-Fi Motherboard + Intel 265K",
+    name: "ASRock B860M-X Motherboard",
     short: "Newer Intel platform with wired-first networking and future expansion.",
-    image: `${imageBase}asrock-b860m-x.svg`,
+    image: `${imageBase}asrock-b860m-x.jpg`,
     category: "Core Platform",
     details: [
       "Selected a non-Wi-Fi motherboard because hardwired networking is my first priority in the home lab.",
@@ -53,10 +53,22 @@ const components = [
     ],
   },
   {
+    id: "processor",
+    name: "Intel Core Ultra 7 265K",
+    short: "Modern processor foundation for workstation, lab, and AI-capable workflows.",
+    image: `${imageBase}intel-265k.jpg`,
+    category: "Processor",
+    details: [
+      "Selected as part of the platform modernization after the data-loss incident exposed the need for a cleaner rebuild.",
+      "Supports daily workstation use, documentation, development, operating system testing, and future virtualization experiments.",
+      "Gives the build a stronger long-term foundation than simply restoring the older system exactly as it was.",
+    ],
+  },
+  {
     id: "memory",
     name: "32GB RAM",
     short: "2 x 16GB memory modules for multitasking and lab workloads.",
-    image: `${imageBase}ram-32gb-ddr5.svg`,
+    image: `${imageBase}ram-32gb-ddr5.jpg`,
     category: "Performance",
     details: [
       "Installed two 16GB sticks for 32GB total memory.",
@@ -66,9 +78,9 @@ const components = [
   },
   {
     id: "primary-storage",
-    name: "Primary 1TB NVMe SSD",
+    name: "Samsung 970 EVO Plus NVMe SSD",
     short: "New main system drive for Windows, applications, and active work.",
-    image: `${imageBase}main-nvme-1tb.svg`,
+    image: `${imageBase}main-nvme-1tb.jpg`,
     category: "Storage",
     details: [
       "Installed as the primary boot drive after the accidental format incident.",
@@ -80,7 +92,7 @@ const components = [
     id: "expanded-storage",
     name: "Expanded SSD Storage Stack",
     short: "Existing SSDs repurposed to improve availability and organization.",
-    image: `${imageBase}samsung-storage-stack.svg`,
+    image: `${imageBase}samsung-storage-stack.jpg`,
     category: "Storage",
     details: [
       "Added an existing 1TB Samsung 970 EVO Plus SSD.",
@@ -91,9 +103,9 @@ const components = [
   },
   {
     id: "psu",
-    name: "650W Power Supply",
+    name: "Seasonic 650W Power Supply",
     short: "Selected to support the current build while leaving room for a future GPU upgrade.",
-    image: `${imageBase}psu-650w.svg`,
+    image: `${imageBase}psu-650w.jpg`,
     category: "Power",
     details: [
       "A 650W PSU provided capacity for the current system and left headroom for a future graphics upgrade.",
@@ -105,7 +117,7 @@ const components = [
     id: "cooling",
     name: "360mm Liquid ARGB Cooling + Case Fans",
     short: "Cooling selected for airflow, reliability, and workload stability.",
-    image: `${imageBase}thermalright-frozen-notte-360.svg`,
+    image: `${imageBase}thermalright-frozen-notte-360.jpg`,
     category: "Cooling",
     details: [
       "Installed a 360mm liquid ARGB cooler for processor cooling.",
@@ -117,7 +129,7 @@ const components = [
     id: "case",
     name: "Lian Li ATX Mid-Tower Case",
     short: "Airflow-focused case with space for storage, cable management, and future upgrades.",
-    image: `${imageBase}lian-li-case.svg`,
+    image: `${imageBase}lian-li-case.jpg`,
     category: "Case + Airflow",
     details: [
       "Selected to support the 360mm liquid cooler, multiple fans, SSD expansion, and clean cable management.",
@@ -129,7 +141,7 @@ const components = [
     id: "gpu",
     name: "Existing RTX 2060 GPU",
     short: "Reused to keep project cost low while preserving a future upgrade path.",
-    image: `${imageBase}rtx-2060.svg`,
+    image: `${imageBase}rtx-2060.jpg`,
     category: "Graphics",
     details: [
       "The GPU is usually one of the most expensive components in a PC build, so reusing the RTX 2060 helped keep total cost down.",
@@ -173,14 +185,14 @@ const lessons = [
 
 function ImageWithFallback({ src, alt }) {
   const [failed, setFailed] = useState(false);
+  const fallbackSrc = src.endsWith(".jpg") ? src.replace(".jpg", ".svg") : "";
 
   if (failed) {
-    return (
-      <div className="pc-image-fallback" role="img" aria-label={alt}>
-        <span>{alt}</span>
-        <small>Photo slot ready for local build image</small>
-      </div>
-    );
+    if (fallbackSrc) {
+      return <img src={fallbackSrc} alt={alt} loading="lazy" />;
+    }
+
+    return <div className="pc-image-fallback" role="img" aria-label={alt}><span>{alt}</span><small>Photo slot ready for local build image</small></div>;
   }
 
   return <img src={src} alt={alt} loading="lazy" onError={() => setFailed(true)} />;
@@ -251,7 +263,7 @@ export default function PCBuildCaseStudy() {
 
           <div className="pc-hero-panel">
             <div className="pc-hero-image">
-              <ImageWithFallback src={`${imageBase}lian-li-case.svg`} alt="Lian Li ATX mid-tower PC build" />
+              <ImageWithFallback src={`${imageBase}lian-li-case.jpg`} alt="Lian Li ATX mid-tower PC build" />
             </div>
             <div className="pc-hero-badge">
               <strong>Built, documented, and improved from failure</strong>
