@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="360 millimeter liquid cooler and case fans">
+  <rect width="900" height="620" fill="#F7EBE0"/>
+  <rect x="112" y="130" width="676" height="184" rx="24" fill="#0A1D48" stroke="#C2912C" stroke-width="8"/>
+  <circle cx="240" cy="222" r="62" fill="#171721" stroke="#F7EBE0" stroke-width="8"/>
+  <circle cx="450" cy="222" r="62" fill="#171721" stroke="#F7EBE0" stroke-width="8"/>
+  <circle cx="660" cy="222" r="62" fill="#171721" stroke="#F7EBE0" stroke-width="8"/>
+  <path d="M318 372c78 62 184 62 264 0" fill="none" stroke="#9E0E18" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="450" cy="430" r="66" fill="#171721" stroke="#C2912C" stroke-width="8"/>
+  <text x="450" y="558" text-anchor="middle" font-family="Lora, Georgia" font-size="38" font-weight="700" fill="#171721">360mm Cooling</text>
+</svg>

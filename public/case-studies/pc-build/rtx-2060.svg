@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="RTX 2060 graphics card">
+  <rect width="900" height="620" fill="#F7EBE0"/>
+  <rect x="126" y="214" width="648" height="210" rx="28" fill="#171721" stroke="#C2912C" stroke-width="8"/>
+  <circle cx="306" cy="319" r="70" fill="#0A1D48" stroke="#F7EBE0" stroke-width="8"/>
+  <circle cx="546" cy="319" r="70" fill="#0A1D48" stroke="#F7EBE0" stroke-width="8"/>
+  <path d="M306 249v140M236 319h140M546 249v140M476 319h140" stroke="#C2912C" stroke-width="12" stroke-linecap="round"/>
+  <rect x="736" y="262" width="52" height="114" rx="8" fill="#9E0E18"/>
+  <text x="450" y="152" text-anchor="middle" font-family="Lora, Georgia" font-size="42" font-weight="700" fill="#171721">RTX 2060 Reused</text>
+  <text x="450" y="496" text-anchor="middle" font-family="Montserrat, Arial" font-size="28" font-weight="700" fill="#0A1D48">Cost control with future upgrade path</text>
+</svg>

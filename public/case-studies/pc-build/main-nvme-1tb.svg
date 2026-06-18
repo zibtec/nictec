@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Primary 1TB NVMe SSD">
+  <rect width="900" height="620" fill="#F7EBE0"/>
+  <rect x="126" y="238" width="648" height="144" rx="28" fill="#171721" stroke="#C2912C" stroke-width="8"/>
+  <rect x="174" y="280" width="118" height="60" rx="10" fill="#0A1D48"/>
+  <rect x="324" y="280" width="118" height="60" rx="10" fill="#0A1D48"/>
+  <rect x="474" y="280" width="118" height="60" rx="10" fill="#0A1D48"/>
+  <circle cx="704" cy="310" r="24" fill="#9E0E18"/>
+  <text x="450" y="174" text-anchor="middle" font-family="Lora, Georgia" font-size="44" font-weight="700" fill="#171721">Primary NVMe</text>
+  <text x="450" y="448" text-anchor="middle" font-family="Montserrat, Arial" font-size="30" font-weight="700" fill="#0A1D48">1TB system drive</text>
+</svg>

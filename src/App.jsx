@@ -5,6 +5,8 @@ import NickCouryPortfolioHomepage from './NickCouryPortfolioHomepage';
 import About from "./pages/About";
 import ExperiencePage from "./pages/Experience";
 import CaseStudiesPage from "./pages/CaseStudies";
+import HomeNetworkCaseStudy from "./pages/HomeNetworkCaseStudy";
+import PCBuildCaseStudy from "./pages/PCBuildCaseStudy";
 import Credentials from "./pages/Credentials";
 import Contact from "./pages/Contact";
 
@@ -73,6 +75,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
+        <Route path="/case-studies/home-lab" element={<HomeNetworkCaseStudy />} />
+        <Route path="/case-studies/pc-build" element={<PCBuildCaseStudy />} />
+        <Route path="/homelab/nickcoury.co/case-studies" element={<HomeNetworkCaseStudy />} />
         <Route path="/credentials" element={<Credentials />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

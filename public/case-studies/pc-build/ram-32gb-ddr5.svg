@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="32GB DDR5 memory modules">
+  <rect width="900" height="620" fill="#F7EBE0"/>
+  <g transform="translate(112 152)">
+    <rect width="676" height="118" rx="22" fill="#171721" stroke="#C2912C" stroke-width="7"/>
+    <rect x="34" y="32" width="70" height="54" rx="8" fill="#0A1D48"/>
+    <rect x="134" y="32" width="70" height="54" rx="8" fill="#0A1D48"/>
+    <rect x="234" y="32" width="70" height="54" rx="8" fill="#0A1D48"/>
+    <rect x="334" y="32" width="70" height="54" rx="8" fill="#0A1D48"/>
+    <rect x="434" y="32" width="70" height="54" rx="8" fill="#0A1D48"/>
+    <rect x="534" y="32" width="70" height="54" rx="8" fill="#0A1D48"/>
+  </g>
+  <g transform="translate(112 330)">
+    <rect width="676" height="118" rx="22" fill="#0A1D48" stroke="#9E0E18" stroke-width="7"/>
+    <rect x="34" y="32" width="70" height="54" rx="8" fill="#F7EBE0"/>
+    <rect x="134" y="32" width="70" height="54" rx="8" fill="#F7EBE0"/>
+    <rect x="234" y="32" width="70" height="54" rx="8" fill="#F7EBE0"/>
+    <rect x="334" y="32" width="70" height="54" rx="8" fill="#F7EBE0"/>
+    <rect x="434" y="32" width="70" height="54" rx="8" fill="#F7EBE0"/>
+    <rect x="534" y="32" width="70" height="54" rx="8" fill="#F7EBE0"/>
+  </g>
+  <text x="450" y="92" text-anchor="middle" font-family="Lora, Georgia" font-size="42" font-weight="700" fill="#171721">32GB Memory</text>
+</svg>

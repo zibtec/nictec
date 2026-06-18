@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="ATX mid-tower PC case">
+  <rect width="900" height="620" fill="#F7EBE0"/>
+  <rect x="286" y="68" width="328" height="484" rx="28" fill="#171721" stroke="#C2912C" stroke-width="9"/>
+  <rect x="326" y="112" width="248" height="360" rx="18" fill="#0A1D48"/>
+  <circle cx="374" cy="514" r="22" fill="#9E0E18"/>
+  <circle cx="450" cy="514" r="22" fill="#C2912C"/>
+  <circle cx="526" cy="514" r="22" fill="#9E0E18"/>
+  <path d="M352 176h196M352 244h196M352 312h196M352 380h196" stroke="#F7EBE0" stroke-width="10" stroke-linecap="round" opacity=".86"/>
+  <text x="450" y="602" text-anchor="middle" font-family="Lora, Georgia" font-size="34" font-weight="700" fill="#171721">ATX Mid-Tower Case</text>
+</svg>

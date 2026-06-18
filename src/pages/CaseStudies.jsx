@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import FloatingSocial from "../components/FloatingSocial";
 import caseStudiesData from "../data/caseStudies-data";
-import HomeLab from "../data/homeLab";
 
 const SectionHeading = ({ eyebrow, title, description }) => (
   <div className="mb-8 max-w-3xl">
@@ -27,9 +27,24 @@ export default function CaseStudiesPage() {
       <main className="page-root mx-auto max-w-5xl px-6 pb-24 pt-44 lg:pt-32">
         <SectionHeading
           eyebrow="Case Studies"
-          title="Real work. Real impact. Relentless execution."
-          description="I approach every role, whether help desk, infrastructure, systems support, or administration, with the same mindset: solve the problem, secure the system, improve the process, and follow through."
+          title="Continuous learning turns curiosity into capability."
+          description="Technology, security, and operations do not stand still, so I treat learning as an ongoing practice. My home lab is one example: a hands-on environment for testing network segmentation, secure access, documentation, governance concepts, and practical infrastructure decisions."
         />
+
+        <div className="mb-10 flex flex-wrap gap-3">
+          <Link
+            to="/case-studies/home-lab"
+            className="inline-flex items-center justify-center rounded-full border border-[var(--seal-gold)] bg-[rgba(194,145,44,0.12)] px-6 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] transition hover:-translate-y-0.5 hover:bg-[rgba(194,145,44,0.2)] hover:text-[var(--ethereal-ivory)] focus:outline-none focus:ring-2 focus:ring-[var(--seal-gold)] focus:ring-offset-2 focus:ring-offset-[var(--regal-navy)]"
+          >
+            Home Lab
+          </Link>
+          <Link
+            to="/case-studies/pc-build"
+            className="inline-flex items-center justify-center rounded-full border border-[var(--seal-gold)] bg-[rgba(194,145,44,0.12)] px-6 py-3 text-sm font-semibold text-[var(--ethereal-ivory)] transition hover:-translate-y-0.5 hover:bg-[rgba(194,145,44,0.2)] hover:text-[var(--ethereal-ivory)] focus:outline-none focus:ring-2 focus:ring-[var(--seal-gold)] focus:ring-offset-2 focus:ring-offset-[var(--regal-navy)]"
+          >
+            PC Build
+          </Link>
+        </div>
 
         <div className="space-y-6">
           {caseStudiesData.map((study) => (
@@ -46,8 +61,6 @@ export default function CaseStudiesPage() {
             </article>
           ))}
         </div>
-
-        <HomeLab />
 
         <footer className="mt-16 text-center text-xs tracking-wider text-[var(--seal-gold)]">
           &copy; {new Date().getFullYear()} Nick Coury - All Rights Reserved

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Expanded SSD storage stack">
+  <rect width="900" height="620" fill="#F7EBE0"/>
+  <rect x="172" y="120" width="556" height="82" rx="18" fill="#0A1D48"/>
+  <rect x="172" y="232" width="556" height="82" rx="18" fill="#171721"/>
+  <rect x="172" y="344" width="556" height="82" rx="18" fill="#0A1D48"/>
+  <rect x="172" y="456" width="556" height="82" rx="18" fill="#171721"/>
+  <circle cx="222" cy="161" r="17" fill="#C2912C"/>
+  <circle cx="222" cy="273" r="17" fill="#C2912C"/>
+  <circle cx="222" cy="385" r="17" fill="#C2912C"/>
+  <circle cx="222" cy="497" r="17" fill="#C2912C"/>
+  <text x="450" y="72" text-anchor="middle" font-family="Lora, Georgia" font-size="42" font-weight="700" fill="#171721">SSD Storage Stack</text>
+  <text x="450" y="596" text-anchor="middle" font-family="Montserrat, Arial" font-size="26" font-weight="700" fill="#9E0E18">OS | data | lab files | backups | recovery</text>
+</svg>
