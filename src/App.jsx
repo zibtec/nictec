@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from "./components/Navbar";
 import NickCouryPortfolioHomepage from './NickCouryPortfolioHomepage';
 import About from "./pages/About";
-import ExperiencePage from "./pages/Experience";
 import CaseStudiesPage from "./pages/CaseStudies";
 import HomeNetworkCaseStudy from "./pages/HomeNetworkCaseStudy";
 import PCBuildCaseStudy from "./pages/PCBuildCaseStudy";
@@ -73,7 +72,6 @@ function App() {
       <Routes>
         <Route path="/" element={<NickCouryPortfolioHomepage />} />
         <Route path="/about" element={<About />} />
-        <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/case-studies" element={<CaseStudiesPage />} />
         <Route path="/case-studies/home-lab" element={<HomeNetworkCaseStudy />} />
         <Route path="/case-studies/pc-build" element={<PCBuildCaseStudy />} />

@@ -28,10 +28,6 @@ const Navbar = () => {
         </Link>
 
         <nav className="flex flex-wrap gap-3 lg:ml-auto" aria-label="Primary navigation">
-          <Link to="/experience" className={linkStyle("/experience")} onClick={(event) => handleTopClick(event, "/experience")}>
-            Experience
-          </Link>
-
           <Link to="/case-studies" className={linkStyle("/case-studies")} onClick={(event) => handleTopClick(event, "/case-studies")}>
             Case Studies
           </Link>
