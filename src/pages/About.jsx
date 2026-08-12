@@ -224,7 +224,7 @@ const About = () => {
                     Master of Science, Information Technology
                   </span>
                   <span className="education-school-line">
-                    Western Governors University (May 2025)
+                    Western Governors University (Sep 2025)
                   </span>
                   <span className="courses-hover-wrap">
                     <button
@@ -257,7 +257,7 @@ const About = () => {
                     Bachelor of Science, Information Technology
                   </span>
                   <span className="education-school-line">
-                    Western Governors University (Sep 2025)
+                    Western Governors University (May 2025)
                   </span>
                   <span className="courses-hover-wrap">
                     <button
