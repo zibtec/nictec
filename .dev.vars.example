@@ -1,0 +1,12 @@
+# Copy to .dev.vars for local Cloudflare Pages Functions testing.
+# Do not commit real secrets.
+
+# Cloudflare Turnstile secret key.
+# Use the matching public site key in .env.local as VITE_TURNSTILE_SITE_KEY.
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+TURNSTILE_ALLOWED_HOSTNAMES=localhost,127.0.0.1
+
+# Resend email delivery. CONTACT_FROM_EMAIL must be a verified Resend sender/domain.
+RESEND_API_KEY=your_resend_api_key_here
+CONTACT_FROM_EMAIL=Portfolio <contact@nickcoury.co>
+CONTACT_TO_EMAIL=nick@nickcoury.co

@@ -9,6 +9,7 @@ On Cloudflare Pages, `functions/api/contact.js` is the Pages Function that handl
 The browser widget creates a Turnstile token, then the backend validates that token with Cloudflare Siteverify before sending the email through Resend. Email delivery is required for a successful submission.
 
 For local development, copy `.env.example` to `.env.local`. The example uses Cloudflare's public testing keys.
+For local Cloudflare Pages Function testing, copy `.dev.vars.example` to `.dev.vars` and fill in the server-only values.
 
 For production, set these environment variables in Cloudflare Pages:
 
@@ -22,3 +23,12 @@ For production, set these environment variables in Cloudflare Pages:
 
 Never expose `TURNSTILE_SECRET_KEY` in client-side code.
 Never expose `RESEND_API_KEY` in client-side code.
+
+To test the full browser-to-inbox flow locally:
+
+1. Set `.env.local` with `VITE_TURNSTILE_SITE_KEY`.
+2. Set `.dev.vars` with `TURNSTILE_SECRET_KEY`, `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL=nick@nickcoury.co`.
+3. Make sure `CONTACT_FROM_EMAIL` uses a Resend-verified sender or domain.
+4. Run `npm run pages:dev`, open the local Cloudflare Pages URL, complete the contact form, and verify the message arrives at `nick@nickcoury.co`.
+
+The contact endpoint can also be checked directly with `npm run test:contact` when `CONTACT_API_ENDPOINT` and `TURNSTILE_TOKEN` are set. Use a token copied from a completed Turnstile form request in browser DevTools.

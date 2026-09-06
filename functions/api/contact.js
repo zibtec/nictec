@@ -4,10 +4,17 @@ const CONTACT_EMAIL = "nick@nickcoury.co";
 const NAME_PATTERN = /^[A-Za-z][A-Za-z' -]{2,}$/;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), {
     status,
     headers: {
+      ...corsHeaders,
       "Content-Type": "application/json; charset=utf-8",
       "Cache-Control": "no-store",
     },
@@ -288,7 +295,7 @@ export async function onRequestGet() {
 }
 
 export async function onRequestOptions() {
-  return new Response(null, { status: 204 });
+  return new Response(null, { status: 204, headers: corsHeaders });
 }
 
 export async function onRequestPost(context) {
